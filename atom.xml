@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leeyefei.github.io</id>
     <title>Gridea</title>
-    <updated>2020-03-23T08:09:54.153Z</updated>
+    <updated>2020-03-23T11:22:24.321Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leeyefei.github.io"/>
     <link rel="self" href="https://leeyefei.github.io/atom.xml"/>
@@ -11,35 +11,73 @@
     <icon>https://leeyefei.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Gridea</rights>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <title type="html"><![CDATA[国内10大经典骑行路线推荐]]></title>
         <id>https://leeyefei.github.io/post/hello-gridea/</id>
         <link href="https://leeyefei.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <content type="html"><![CDATA[<p><img src="https://leeyefei.github.io/post-images/1584962297615.jpg" alt="" loading="lazy"><br>
+旅行导读：骑行是一项低碳环保节能的旅行方式，骑行也是一种累并着快乐的旅行方式。如今一辆车、一个包、一部单反，这样的装备上路的驴友们越来越多。从休闲骑行到长途的跋涉，有很多的经典路线在骑友们之间流传。<br>
+　　1、大漠里的“寻绿”之旅：乌鲁木齐→敦煌</p>
+<figure data-type="image" tabindex="1"><img src="https://leeyefei.github.io/post-images/1584962304337.jpg" alt="" loading="lazy"></figure>
+<p>风景★★★ 难度★★ 流行 ★★<br>
+　　骑行路线：乌鲁木齐市→达坂城区→吐鲁番市→鄯善县→一碗泉村→哈密市→骆驼圈子村→星星峡镇→甘肃省柳园镇→西湖乡→敦煌市。全程约990公里。<br>
+　　上榜理由：<br>
+　　沙漠戈壁的艰苦环境下，一骑红尘杀到绿洲。期间的种种感受，会因为这环境的变化而特别明显。一趟旅行下来，希望也许就在心里种上了。因为，绿洲总在前方等着。<br>
+　　2、环青海湖</p>
+<p><img src="https://leeyefei.github.io/post-images/1584962326401.jpg" alt="" loading="lazy"><br>
+　　风景★★★★ 难度★ 流行★★★<br>
+　　骑行路线：青海湖环湖，顺时针为黑马河乡→鸟岛→刚察县→西海镇→湟源县，全程约360公里。<br>
+　　上榜理由：<br>
+　　青海湖是高原圣湖，景色优美，西北边的鸟岛栖堪称“鸟的王国”，五月份是观鸟最好的季节。油菜花开的时候骑行可以穿行花海，高原的微风吹来的花香，人都醉了。在身体条件和时间充足的情况下，这条路线可以说是最休闲惬意的之一。<br>
+　　3、丝路之旅：兰州→敦煌<br>
+<img src="https://leeyefei.github.io/post-images/1584962353786.jpg" alt="" loading="lazy"></p>
+<p>风景★★★★ 难度★★ 流行★★★<br>
+　　骑行路线：兰州市→天祝藏族自治县→武威市→张掖市→酒泉市→嘉峪关市→玉门市→瓜州县→敦煌市。全程约1100公里。<br>
+　　上榜理由：<br>
+　　沿着河西走廊一路行进，走这条路线就是一次文化之旅。名胜古迹让人目不暇接，敦煌莫高窟、长城嘉峪关、酒泉卫星发射基地、张掖大佛寺、武威罗什塔、小长城遗址、烽火台遗址等。不知是否听到了来自汉唐的远古驼铃。<br>
+　　4、大运河文化之旅：北京→杭州　<br>
+<img src="https://leeyefei.github.io/post-images/1584962371491.jpg" alt="" loading="lazy"></p>
+<p>风景★★★ 难度★ 流行★★★★★<br>
+　　骑行路线：北京市→天津市→沧州市→德州市→聊城市→济宁市→徐州市→宿迁市→淮安市→扬州市→常州市→无锡市→上海市→嘉兴市→杭州市。全程约1780公里。<br>
+　　上榜理由：<br>
+　　京杭大运河承载了厚重的历史，留下了数不清的珍贵文化遗产。沿着运河一路向南，既可以领略不同城市的风情，又能够感受中华民族深邃的文化底蕴。<br>
+　　5、新藏线：喀什→拉萨<br>
+<img src="https://leeyefei.github.io/post-images/1584962386212.jpg" alt="" loading="lazy"></p>
+<p>风景★★ 难度★★★★★ 流行★★★<br>
+　　上榜理由：喀什市→叶城县→普萨村→依格孜亚→康西瓦→甜水海→假桑玛日村→吉普村→日土县→噶尔县→巴噶乡→仲巴县→萨噶县→拉孜县→日喀则市→拉萨市。全程2850多公里。<br>
+　　上榜理由：<br>
+　　这是最艰苦、最考验毅力、环境最恶劣、人烟最稀少的极限骑行路线，难度是川藏线的两倍。走别人走不到的路，看别人不曾看过的风景，大概说出了选择新藏线的骑友的心声。“行车新藏线，甚比蜀道难；库地达坂险，犹似鬼门关；麻扎达坂尖，陡升五千三；黑卡达坂旋，九十九道湾；界山达坂弯，伸手可摸天……”<br>
+　　6、浪漫日光之旅：海南环岛东线、中线骑行</p>
+<p><img src="https://leeyefei.github.io/post-images/1584962401363.jpg" alt="" loading="lazy"><br>
+　　风景★★★★★ 难度★ 流行★★★★★<br>
+　　骑行路线：海口市→灵山镇→三江镇→文昌市→东郊镇椰林风景区→博鳌镇→兴隆热带植物园→三亚市→五指山市→琼中黎族苗族自治县→海口市。全程约650公里。<br>
+　　上榜理由：<br>
+　　冬季骑行海南恐怕是在舒服不过的事情，尤其是北方的筒子们。逃离寒冬，去拥抱沙滩椰林和蓝天碧海。加上骑行难度不大，身体不下地狱，眼睛也是可以上天堂的。<br>
+　　7、 一路向北：北京→漠河</p>
+<p><img src="https://leeyefei.github.io/post-images/1584962416286.jpg" alt="" loading="lazy"><br>
+　　风景★★★ 难度★★★★ 流行★★★<br>
+　　骑行路线：北京市→密云县→滦平县→隆化县→围场满蒙自治县→赤峰市→通辽市→乌兰浩特市→莫力达瓦达斡尔族自治旗(莫旗)→嫩江县→黑河市→塔河→漠河。全程约2800公里。<br>
+　　上榜理由：<br>
+　　一路向北，也许从此就找到北了。一路向北，风景是丰富多彩。秋季骑行这条路线，那么陪伴你的将会是最徇丽斑斓的秋色。说骑行在油画中，也是一点都不为过的。<br>
+　　8、沿312国道：上海→乌鲁木齐</p>
+<p><img src="https://leeyefei.github.io/post-images/1584962477569.jpg" alt="" loading="lazy"><br>
+　　风景★★★ 难度★★★★★ 流行★★★<br>
+　　骑行路线：上海市→无锡市→南京市→合肥市→信阳市→南阳市→西安市→平凉市→兰州市→武威市→酒泉市→嘉峪关市→柳园镇→猩猩峡镇→骆驼圈镇→哈密市→吐鲁番市→乌鲁木齐。全程约3900公里。<br>
+　　上榜理由：<br>
+这条线路绝对是对长途骑行者的毅力大考验，同时对骑行者的经验和体力要求也很高。从气候湿润的上海，到地处大西北、气候干燥且昼夜温差颇大的新疆，沿途景色谈不上怡人，却能带给你人文环境与地理环境渐变的别样感受。<br>
+　　9、大香格里拉环线</p>
+<p><img src="https://leeyefei.github.io/post-images/1584962499645.png" alt="" loading="lazy"><br>
+　　风景★★★★★ 难度★★★★ 流行★★★★<br>
+　　骑行路线：成都市→都江堰市→小金县→丹巴县→新都桥镇→理塘县→稻城县→乡城县→香格里拉县→丽江市→泸沽湖镇→盐源县→西昌市→雅安市→成都市。全程1500多公里。<br>
+　　上榜理由：<br>
+　　美景集结地。高度浓缩川滇两省的精华景致：低海拔冰川海螺沟、情歌的故里康定、摄影天堂新都桥、中国最美的高原古村丹巴、人间最后的净土稻城亚丁、不能用语言形容其美丽的泸沽湖、雄美壮丽的虎跳峡、古朴秀美的丽江古城……另外，选择此线路还能穿越众多少数民族聚居地，尽情领略绚烂多彩的民族风情。<br>
+　　10、川藏线：成都→拉萨</p>
+<p><img src="https://leeyefei.github.io/post-images/1584962525470.jpg" alt="" loading="lazy"><br>
+　　风景★★★★ 难度★★★★★ 流行★★★★★<br>
+　　骑行路线：成都市→雅安市→康定县→雅江县→理塘县→巴塘县→芒康县→左贡县→八宿县→波密县→林芝县→工布江达县→墨竹工卡县→拉萨市。全程约2200公里。<br>
+　　上榜理由：<br>
+　　进藏的经典骑行线路，也是进藏线路中景色最美的，高山草场、滚滚长河、皑皑雪山交替出现。这条线路每年都吸引着不同地区、不同年龄的车友踏上征途，其中的 119道班更是为广大骑友熟知。同时，这也是一条异常艰苦的线路。</p>
 ]]></content>
     </entry>
 </feed>
