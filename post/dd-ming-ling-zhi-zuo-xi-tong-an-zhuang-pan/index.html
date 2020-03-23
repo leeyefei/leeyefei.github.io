@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>随笔 | 日照骑行者</title>
+<title>dd命令制作系统安装盘 | 日照骑行者</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,13 +12,26 @@
 <link rel="stylesheet" href="https://leeyefei.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="一个爱骑行的科技粉">
+    <meta name="description" content="linux下有很多工具可以制作启动盘，不过我们可以使用linux下的一条命令来完成-----dd
+操作方法:
+1 卸载你的U盘
+假设你的u盘对应的设备是sdb1(可以使用
+df查看或者fdisk)
+sudo umount /
+dev/sdb..." />
+    <meta name="keywords" content="linux" />
   </head>
   <body>
     <div id="app" class="main">
@@ -122,28 +135,54 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 随笔</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://leeyefei.github.io/post/fang-xia-guo-qu-rang-xin-gui-ling/">
-                  <h2 class="post-title">放下过去，让心归零</h2>
-                </a>
-                <div class="post-date">
-                  2020-03-23
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">dd命令制作系统安装盘</h2>
+            <div class="post-date">2020-03-23</div>
+            
+            <div class="post-content" v-pre>
+              <p>linux下有很多工具可以制作启动盘，不过我们可以使用linux下的一条命令来完成-----dd</p>
+<p>操作方法:</p>
+<p>1 卸载你的U盘</p>
+<p>假设你的u盘对应的设备是sdb1(可以使用<br>
+df查看或者fdisk)</p>
+<p>sudo umount /<br>
+dev/sdb1</p>
+<p>2 写入linux(ubuntu fedora .....)系统</p>
+<p>sudo dd if=系统路径   of=/<br>
+dev/sdb</p>
+<p>例如   sudo dd if=./ubuntu-13.04-beta2-desktop-amd64.iso   of=/<br>
+dev/sdb</p>
 
-          <div class="pagination-container">
-  
-  
-</div>
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://leeyefei.github.io/tag/linux/" class="tag">
+                    linux
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://leeyefei.github.io/post/fang-xia-guo-qu-rang-xin-gui-ling/">
+                  <h3 class="post-title">
+                    放下过去，让心归零
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
 
         </div>
       </div>
@@ -164,6 +203,29 @@ var app = new Vue({
 </script>
 
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'leeyefei.github.io',
+        owner: 'leeyefei',
+        admin: ['leeyefei'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 

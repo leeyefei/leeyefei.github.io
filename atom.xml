@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leeyefei.github.io</id>
     <title>日照骑行者</title>
-    <updated>2020-03-23T14:47:19.901Z</updated>
+    <updated>2020-03-23T14:53:26.263Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leeyefei.github.io"/>
     <link rel="self" href="https://leeyefei.github.io/atom.xml"/>
@@ -10,6 +10,53 @@
     <logo>https://leeyefei.github.io/images/avatar.png</logo>
     <icon>https://leeyefei.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 日照骑行者</rights>
+    <entry>
+        <title type="html"><![CDATA[Macos下iterm2常用快捷命令]]></title>
+        <id>https://leeyefei.github.io/post/macos-xia-iterm2-chang-yong-kuai-jie-ming-ling/</id>
+        <link href="https://leeyefei.github.io/post/macos-xia-iterm2-chang-yong-kuai-jie-ming-ling/">
+        </link>
+        <updated>2020-03-23T14:51:17.000Z</updated>
+        <content type="html"><![CDATA[<p>⌘Command + W 关闭当前窗口或当前Tab<br>
+⌘Command + T 新建Tab<br>
+<img src="https://leeyefei.github.io/post-images/1584975182648.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[命令行下文件临时存储]]></title>
+        <id>https://leeyefei.github.io/post/ming-ling-xing-xia-wen-jian-lin-shi-cun-chu/</id>
+        <link href="https://leeyefei.github.io/post/ming-ling-xing-xia-wen-jian-lin-shi-cun-chu/">
+        </link>
+        <updated>2020-03-23T14:49:52.000Z</updated>
+        <content type="html"><![CDATA[<p>curl -F &quot;c=@Desktop/hello1.png&quot; &quot;http://fars.ee/“(发送桌面上的hello1.png到fars.ee)</p>
+<p>curl -F 'name=@hello1.png' https://img.vim-cn.com/</p>
+<p>https://send.firefox.com</p>
+<p>返回主目录命令<br>
+cd ..<br>
+转到桌面命令<br>
+cd desktop<br>
+列目录文件 ls</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[dd命令制作系统安装盘]]></title>
+        <id>https://leeyefei.github.io/post/dd-ming-ling-zhi-zuo-xi-tong-an-zhuang-pan/</id>
+        <link href="https://leeyefei.github.io/post/dd-ming-ling-zhi-zuo-xi-tong-an-zhuang-pan/">
+        </link>
+        <updated>2020-03-23T14:48:26.000Z</updated>
+        <content type="html"><![CDATA[<p>linux下有很多工具可以制作启动盘，不过我们可以使用linux下的一条命令来完成-----dd</p>
+<p>操作方法:</p>
+<p>1 卸载你的U盘</p>
+<p>假设你的u盘对应的设备是sdb1(可以使用<br>
+df查看或者fdisk)</p>
+<p>sudo umount /<br>
+dev/sdb1</p>
+<p>2 写入linux(ubuntu fedora .....)系统</p>
+<p>sudo dd if=系统路径   of=/<br>
+dev/sdb</p>
+<p>例如   sudo dd if=./ubuntu-13.04-beta2-desktop-amd64.iso   of=/<br>
+dev/sdb</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[放下过去，让心归零]]></title>
         <id>https://leeyefei.github.io/post/fang-xia-guo-qu-rang-xin-gui-ling/</id>
