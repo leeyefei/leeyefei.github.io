@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>骑行 | 日照骑行者</title>
+<title>Nload-linux命令行下显示实时网速 | 日照骑行者</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,13 +12,27 @@
 <link rel="stylesheet" href="https://leeyefei.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="一个爱骑行的科技粉">
+    <meta name="description" content="
+centos7系统
+yum install epel-release
+yum install nload
+执行nload -u MB,
+-u参数,
+设置右边Curr、Avg、Min、Max的数据单位，默认是自动变的.注意大小写单位不同！
+..." />
+    <meta name="keywords" content="macos,linux" />
   </head>
   <body>
     <div id="app" class="main">
@@ -122,48 +136,56 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="current-tag">标签: 骑行</h2>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://leeyefei.github.io/post/about/">
-                  <h2 class="post-title">心在远方</h2>
-                </a>
-                <div class="post-date">
-                  2019-01-25
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://leeyefei.github.io/post/bike/">
-                  <h2 class="post-title">国内10大经典骑行路线推荐</h2>
-                </a>
-                <div class="post-date">
-                  2018-12-12
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-                <a class="right" href="https://leeyefei.github.io/post/bike/">
-                  <div class="feature-container" style="background-image: url('https://leeyefei.github.io/post-images/bike.jpg')">
-                  </div>
-                </a>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">Nload-linux命令行下显示实时网速</h2>
+            <div class="post-date">2020-03-23</div>
+            
+            <div class="post-content" v-pre>
+              <p><img src="https://leeyefei.github.io/post-images/1584974624924.jpg" alt="" loading="lazy"><br>
+centos7系统<br>
+yum install epel-release<br>
+yum install nload</p>
+<p>执行nload -u MB,</p>
+<p>-u参数,<br>
+设置右边Curr、Avg、Min、Max的数据单位，默认是自动变的.注意大小写单位不同！<br>
+(h|b|k|m|g h: auto, b: Bit/s, k: kBit/s, m: MBit/s etc.</p>
+<p>H|B|K|M|G H: auto, B: Byte/s, K: kByte/s, M: MByte/s etc.)</p>
+<p>退出q</p>
 
-          <div class="pagination-container">
-  
-  
-</div>
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://leeyefei.github.io/tag/macos/" class="tag">
+                    macos
+                  </a>
+                
+                  <a href="https://leeyefei.github.io/tag/linux/" class="tag">
+                    linux
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://leeyefei.github.io/post/linux-chang-yong-ming-ling-da-quan-fei-chang-quan/">
+                  <h3 class="post-title">
+                    Linux常用命令大全（非常全！！！）
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
 
         </div>
       </div>
@@ -184,6 +206,29 @@ var app = new Vue({
 </script>
 
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'leeyefei.github.io',
+        owner: 'leeyefei',
+        admin: ['leeyefei'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
