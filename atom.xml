@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leeyefei.github.io</id>
     <title>日照骑行者</title>
-    <updated>2020-03-23T23:39:27.226Z</updated>
+    <updated>2020-03-23T23:44:14.571Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leeyefei.github.io"/>
     <link rel="self" href="https://leeyefei.github.io/atom.xml"/>
@@ -31,7 +31,10 @@
         <link href="https://leeyefei.github.io/post/ming-ling-xing-xia-wen-jian-lin-shi-cun-chu/">
         </link>
         <updated>2020-03-23T14:49:52.000Z</updated>
+        <summary type="html"><![CDATA[<p>curl -F &quot;c=@Desktop/hello1.png&quot; &quot;http://fars.ee/“(发送桌面上的hello1.png到fars.ee)</p>
+]]></summary>
         <content type="html"><![CDATA[<p>curl -F &quot;c=@Desktop/hello1.png&quot; &quot;http://fars.ee/“(发送桌面上的hello1.png到fars.ee)</p>
+<!-- more -->
 <p>curl -F 'name=@hello1.png' https://img.vim-cn.com/</p>
 <p>https://send.firefox.com</p>
 <p>返回主目录命令<br>
@@ -47,7 +50,10 @@ cd desktop<br>
         <link href="https://leeyefei.github.io/post/dd-ming-ling-zhi-zuo-xi-tong-an-zhuang-pan/">
         </link>
         <updated>2020-03-23T14:48:26.000Z</updated>
+        <summary type="html"><![CDATA[<p>linux下有很多工具可以制作启动盘，不过我们可以使用linux下的一条命令来完成-----dd</p>
+]]></summary>
         <content type="html"><![CDATA[<p>linux下有很多工具可以制作启动盘，不过我们可以使用linux下的一条命令来完成-----dd</p>
+<!-- more -->
 <p>操作方法:</p>
 <p>1 卸载你的U盘</p>
 <p>假设你的u盘对应的设备是sdb1(可以使用<br>
@@ -67,7 +73,10 @@ dev/sdb</p>
         <link href="https://leeyefei.github.io/post/fang-xia-guo-qu-rang-xin-gui-ling/">
         </link>
         <updated>2020-03-23T14:45:58.000Z</updated>
+        <summary type="html"><![CDATA[<p>人生不易，不要笑话别人。家家都有难念的经，人人都有难唱的曲。再风光的人，背后也有寒凉苦楚；再幸福的人，内心也有无奈难处。谁的人生都不易，笑人等于笑己，尊重别人就是尊重自己。最穷无非讨饭，不死总会出头。谁的人生十全十美，谁的生活没有薄凉，谁敢保证一直都是人生得意。</p>
+]]></summary>
         <content type="html"><![CDATA[<p>人生不易，不要笑话别人。家家都有难念的经，人人都有难唱的曲。再风光的人，背后也有寒凉苦楚；再幸福的人，内心也有无奈难处。谁的人生都不易，笑人等于笑己，尊重别人就是尊重自己。最穷无非讨饭，不死总会出头。谁的人生十全十美，谁的生活没有薄凉，谁敢保证一直都是人生得意。</p>
+<!-- more -->
 <p>金无足赤，人无完人。做人要真诚、谦和，善待别人，温暖自己。人，是活给自己看的。别奢望人人都懂你，别要求事事都如意。苦累中，懂得安慰自己。没人心疼，也要坚强；没人鼓掌，也要飞翔；没人欣赏，也要芬芳。</p>
 <p>生活，没有模板，只需心灯一盏。烦时，找找乐，别丢了幸福；忙时，偷偷闲，别丢了健康；累时，停停手，别丢了快乐。平凡生活中，忙绿于工作，安然于家庭。不求事业多大进步，只愿生活甜美温馨；不想生活多么富有，只愿家人健康欢欣。</p>
 <p>缘分，不是偶然，要心向心；朋友，不是随兴，要诚对诚；感情，不是儿戏，要惜对惜；相识，不是新鲜，要真对真；懂得，不是随便，要忠对忠。真情本无语，尽在珍惜，尽在真心。</p>
@@ -87,10 +96,16 @@ dev/sdb</p>
         <link href="https://leeyefei.github.io/post/nload-linux-ming-ling-xing-xia-xian-shi-shi-shi-wang-su/">
         </link>
         <updated>2020-03-23T14:41:43.000Z</updated>
+        <summary type="html"><![CDATA[<p><img src="https://leeyefei.github.io/post-images/1584974624924.jpg" alt="" loading="lazy"><br>
+centos7系统<br>
+yum install epel-release<br>
+yum install nload</p>
+]]></summary>
         <content type="html"><![CDATA[<p><img src="https://leeyefei.github.io/post-images/1584974624924.jpg" alt="" loading="lazy"><br>
 centos7系统<br>
 yum install epel-release<br>
 yum install nload</p>
+<!-- more -->
 <p>执行nload -u MB,</p>
 <p>-u参数,<br>
 设置右边Curr、Avg、Min、Max的数据单位，默认是自动变的.注意大小写单位不同！<br>
@@ -105,9 +120,11 @@ yum install nload</p>
         <link href="https://leeyefei.github.io/post/linux-chang-yong-ming-ling-da-quan-fei-chang-quan/">
         </link>
         <updated>2020-03-23T14:37:54.000Z</updated>
-        <content type="html"><![CDATA[<p>最近都在和Linux打交道，感觉还不错。我觉得Linux相比windows比较麻烦的就是很多东西都要用命令来控制，当然，这也是很多人喜欢linux的原因，比较短小但却功能强大。我将我了解到的命令列举一下，仅供大家参考：<br>
- <br>
-系统信息 <br>
+        <summary type="html"><![CDATA[<p>最近都在和Linux打交道，感觉还不错。我觉得Linux相比windows比较麻烦的就是很多东西都要用命令来控制，当然，这也是很多人喜欢linux的原因，比较短小但却功能强大。我将我了解到的命令列举一下，仅供大家参考：</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>最近都在和Linux打交道，感觉还不错。我觉得Linux相比windows比较麻烦的就是很多东西都要用命令来控制，当然，这也是很多人喜欢linux的原因，比较短小但却功能强大。我将我了解到的命令列举一下，仅供大家参考：</p>
+<!-- more -->
+<p>系统信息 <br>
 arch 显示机器的处理器架构<br>
 uname -m 显示机器的处理器架构<br>
 uname -r 显示正在使用的内核版本 <br>
@@ -489,11 +506,17 @@ jps 192.168.0.77<br>
         <link href="https://leeyefei.github.io/post/about/">
         </link>
         <updated>2019-01-25T11:09:48.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>心有多远，前方的路就有多远。<br>
+这不公是一次身体的放飞，更是一次心灵的旅行。。。</p>
+</blockquote>
+]]></summary>
         <content type="html"><![CDATA[<blockquote>
 <p>心有多远，前方的路就有多远。<br>
-这不公是一次身体的放飞，更是一次心灵的旅行。。。<br>
-<img src="https://leeyefei.github.io/post-images/1584973420590.jpg" alt="" loading="lazy"></p>
+这不公是一次身体的放飞，更是一次心灵的旅行。。。</p>
 </blockquote>
+<!-- more -->
+<figure data-type="image" tabindex="1"><img src="https://leeyefei.github.io/post-images/1584973420590.jpg" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
     <entry>
@@ -502,8 +525,11 @@ jps 192.168.0.77<br>
         <link href="https://leeyefei.github.io/post/bike/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
-        <content type="html"><![CDATA[<p>旅行导读：骑行是一项低碳环保节能的旅行方式，骑行也是一种累并着快乐的旅行方式。如今一辆车、一个包、一部单反，这样的装备上路的驴友们越来越多。从休闲骑行到长途的跋涉，有很多的经典路线在骑友们之间流传。<br>
-　　1、大漠里的“寻绿”之旅：乌鲁木齐→敦煌</p>
+        <summary type="html"><![CDATA[<p>旅行导读：骑行是一项低碳环保节能的旅行方式，骑行也是一种累并着快乐的旅行方式。如今一辆车、一个包、一部单反，这样的装备上路的驴友们越来越多。从休闲骑行到长途的跋涉，有很多的经典路线在骑友们之间流传。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>旅行导读：骑行是一项低碳环保节能的旅行方式，骑行也是一种累并着快乐的旅行方式。如今一辆车、一个包、一部单反，这样的装备上路的驴友们越来越多。从休闲骑行到长途的跋涉，有很多的经典路线在骑友们之间流传。</p>
+<!-- more -->
+<p>1、大漠里的“寻绿”之旅：乌鲁木齐→敦煌</p>
 <figure data-type="image" tabindex="1"><img src="https://leeyefei.github.io/post-images/1584962304337.jpg" alt="" loading="lazy"></figure>
 <p>风景★★★ 难度★★ 流行 ★★<br>
 　　骑行路线：乌鲁木齐市→达坂城区→吐鲁番市→鄯善县→一碗泉村→哈密市→骆驼圈子村→星星峡镇→甘肃省柳园镇→西湖乡→敦煌市。全程约990公里。<br>
