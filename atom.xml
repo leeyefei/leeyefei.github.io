@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leeyefei.github.io</id>
     <title>日照骑行者</title>
-    <updated>2020-03-23T11:38:00.507Z</updated>
+    <updated>2020-03-23T14:24:33.565Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leeyefei.github.io"/>
     <link rel="self" href="https://leeyefei.github.io/atom.xml"/>
@@ -10,6 +10,19 @@
     <logo>https://leeyefei.github.io/images/avatar.png</logo>
     <icon>https://leeyefei.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 日照骑行者</rights>
+    <entry>
+        <title type="html"><![CDATA[心在远方]]></title>
+        <id>https://leeyefei.github.io/post/about/</id>
+        <link href="https://leeyefei.github.io/post/about/">
+        </link>
+        <updated>2019-01-25T11:09:48.000Z</updated>
+        <content type="html"><![CDATA[<blockquote>
+<p>心有多远，前方的路就有多远。<br>
+这不公是一次身体的放飞，更是一次心灵的旅行。。。<br>
+<img src="https://leeyefei.github.io/post-images/1584973420590.jpg" alt="" loading="lazy"></p>
+</blockquote>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[国内10大经典骑行路线推荐]]></title>
         <id>https://leeyefei.github.io/post/bike/</id>
