@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leeyefei.github.io</id>
     <title>日照骑行者</title>
-    <updated>2020-03-24T02:04:36.773Z</updated>
+    <updated>2020-03-24T02:21:36.678Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leeyefei.github.io"/>
     <link rel="self" href="https://leeyefei.github.io/atom.xml"/>
@@ -10,6 +10,22 @@
     <logo>https://leeyefei.github.io/images/avatar.png</logo>
     <icon>https://leeyefei.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 日照骑行者</rights>
+    <entry>
+        <title type="html"><![CDATA[终端音乐播放器CMUS]]></title>
+        <id>https://leeyefei.github.io/post/zhong-duan-yin-le-bo-fang-qi-cmus/</id>
+        <link href="https://leeyefei.github.io/post/zhong-duan-yin-le-bo-fang-qi-cmus/">
+        </link>
+        <updated>2020-03-24T02:18:51.000Z</updated>
+        <summary type="html"><![CDATA[<p>macos安装 brew install cmus；debian linux安装 apt install cmus</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>macos安装 brew install cmus；debian linux安装 apt install cmus</p>
+<!-- more -->
+<p>CMUS使用<br>
+数字1~7可以切换界面<br>
+添加歌曲<br>
+在任一界面，输入&quot;:add 文件名或目录名&quot;，则会将对应的歌曲文件或目录中的所有歌曲文件全部添加到库中。<img src="https://leeyefei.github.io/post-images/1585016471972.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[终端ssh下载上传文件命令]]></title>
         <id>https://leeyefei.github.io/post/zhong-duan-ssh-xia-zai-shang-chuan-wen-jian-ming-ling/</id>
