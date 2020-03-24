@@ -1,149 +1,173 @@
+<!DOCTYPE html>
 <html>
   <head>
-  <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>随笔 | 日照骑行者</title>
-<link rel="shortcut icon" href="https://leeyefei.github.io/favicon.ico?v=1585007648878">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://leeyefei.github.io/favicon.ico?v=1585015412203">
 <link rel="stylesheet" href="https://leeyefei.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="随笔 | 日照骑行者 - Atom Feed" href="https://leeyefei.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-  <meta name="description" content="一个爱骑行的科技粉" />
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="一个爱骑行的科技粉">
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://leeyefei.github.io">
-  <img class="avatar" src="https://leeyefei.github.io/images/avatar.png?v=1585007648878" alt="">
-  </a>
-  <h1 class="site-title">
-    日照骑行者
-  </h1>
-  <p class="site-description">
-    一个爱骑行的科技粉
-  </p>
-  <div class="menu-container">
-    
-      
-        <a href="/" class="menu">
-          首页
-        </a>
-      
-    
-      
-        <a href="/tag/macos/" class="menu">
-          macos
-        </a>
-      
-    
-      
-        <a href="/tag/linux/" class="menu">
-          linux
-        </a>
-      
-    
-      
-        <a href="/tag/tesla/" class="menu">
-          Tesla
-        </a>
-      
-    
-      
-        <a href="/tag/bike/" class="menu">
-          骑行
-        </a>
-      
-    
-      
-        <a href="/tag/suibi/" class="menu">
-          随笔
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
-  </div>
-  <div class="social-container">
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  </div>
-</div>
+    <div id="app" class="main">
 
-        <div class="current-tag-container">
-            <h2 class="title">
-                标签：# 随笔
-            </h2> 
-        </div>
-        <div class="post-container">
-  
-    <article class="post">
-      <a href="https://leeyefei.github.io/post/fang-xia-guo-qu-rang-xin-gui-ling/">
-        <h2 class="post-title">放下过去，让心归零</h2>
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://leeyefei.github.io">
+        <img src="https://leeyefei.github.io/images/avatar.png?v=1585015412203" class="site-logo">
+        <h1 class="site-title">日照骑行者</h1>
       </a>
-      <div class="post-info">
-        <span>
-          2020-03-23
-        </span>
-        <span>
-          4 min read
-        </span>
-        
-          <a href="https://leeyefei.github.io/tag/suibi/" class="post-tag">
-            # 随笔
-          </a>
-        
-      </div>
-      
-      <div class="post-abstract">
-        <p>人生不易，不要笑话别人。家家都有难念的经，人人都有难唱的曲。再风光的人，背后也有寒凉苦楚；再幸福的人，内心也有无奈难处。谁的人生都不易，笑人等于笑己，尊重别人就是尊重自己。最穷无非讨饭，不死总会出头。谁的人生十全十美，谁的生活没有薄凉，谁敢保证一直都是人生得意。</p>
-
-      </div>
-    </article>
-  
-</div>
-
-        <div class="pagination-container">
-  
-  
-</div>
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://leeyefei.github.io/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
       </div>
     </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/tag/macos/" class="site-nav">
+            macos
+          </a>
+        
+      
+        
+          <a href="/tag/linux/" class="site-nav">
+            linux
+          </a>
+        
+      
+        
+          <a href="/tag/tesla/" class="site-nav">
+            Tesla
+          </a>
+        
+      
+        
+          <a href="/tag/bike/" class="site-nav">
+            骑行
+          </a>
+        
+      
+        
+          <a href="/tag/suibi/" class="site-nav">
+            随笔
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/leeyefei" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个爱骑行的科技粉
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://leeyefei.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <h2 class="current-tag">标签: 随笔</h2>
+          
+            <article class="post-item">
+              <div class="left">
+                <a href="https://leeyefei.github.io/post/fang-xia-guo-qu-rang-xin-gui-ling/">
+                  <h2 class="post-title">放下过去，让心归零</h2>
+                </a>
+                <div class="post-date">
+                  2020-03-23
+                </div>
+                <div class="post-abstract">
+                  <p>人生不易，不要笑话别人。家家都有难念的经，人人都有难唱的曲。再风光的人，背后也有寒凉苦楚；再幸福的人，内心也有无奈难处。谁的人生都不易，笑人等于笑己，尊重别人就是尊重自己。最穷无非讨饭，不死总会出头。谁的人生十全十美，谁的生活没有薄凉，谁敢保证一直都是人生得意。</p>
+
+                </div>
+              </div>
+              
+            </article>
+          
+
+          <div class="pagination-container">
+  
+  
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
   </body>
 </html>

@@ -1,128 +1,140 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>放下过去，让心归零 | 日照骑行者</title>
-<link rel="shortcut icon" href="https://leeyefei.github.io/favicon.ico?v=1585007648878">
-<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://leeyefei.github.io/favicon.ico?v=1585015412203">
 <link rel="stylesheet" href="https://leeyefei.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="放下过去，让心归零 | 日照骑行者 - Atom Feed" href="https://leeyefei.github.io/atom.xml">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
     <meta name="description" content="人生不易，不要笑话别人。家家都有难念的经，人人都有难唱的曲。再风光的人，背后也有寒凉苦楚；再幸福的人，内心也有无奈难处。谁的人生都不易，笑人等于笑己，尊重别人就是尊重自己。最穷无非讨饭，不死总会出头。谁的人生十全十美，谁的生活没有薄凉，谁敢..." />
     <meta name="keywords" content="随笔" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://leeyefei.github.io">
-  <img class="avatar" src="https://leeyefei.github.io/images/avatar.png?v=1585007648878" alt="">
-  </a>
-  <h1 class="site-title">
-    日照骑行者
-  </h1>
-  <p class="site-description">
-    一个爱骑行的科技粉
-  </p>
-  <div class="menu-container">
-    
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://leeyefei.github.io">
+        <img src="https://leeyefei.github.io/images/avatar.png?v=1585015412203" class="site-logo">
+        <h1 class="site-title">日照骑行者</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
       
-        <a href="/" class="menu">
-          首页
-        </a>
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
       
-    
+        
+          <a href="/tag/macos/" class="site-nav">
+            macos
+          </a>
+        
       
-        <a href="/tag/macos/" class="menu">
-          macos
-        </a>
+        
+          <a href="/tag/linux/" class="site-nav">
+            linux
+          </a>
+        
       
-    
+        
+          <a href="/tag/tesla/" class="site-nav">
+            Tesla
+          </a>
+        
       
-        <a href="/tag/linux/" class="menu">
-          linux
-        </a>
+        
+          <a href="/tag/bike/" class="site-nav">
+            骑行
+          </a>
+        
       
-    
+        
+          <a href="/tag/suibi/" class="site-nav">
+            随笔
+          </a>
+        
       
-        <a href="/tag/tesla/" class="menu">
-          Tesla
-        </a>
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
       
-    
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
       
-        <a href="/tag/bike/" class="menu">
-          骑行
-        </a>
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
       
-    
-      
-        <a href="/tag/suibi/" class="menu">
-          随笔
-        </a>
-      
-    
-      
-        <a href="/archives" class="menu">
-          归档
-        </a>
-      
-    
-      
-        <a href="/tags" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about" class="menu">
-          关于
-        </a>
-      
-    
+    </div>
   </div>
-  <div class="social-container">
-    
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
       
-    
+        
+          <a class="social-link" href="https://github.com/leeyefei" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
       
-    
+        
       
-    
+        
       
-    
+        
       
-    
+        
+      
+    </div>
+    <div class="site-description">
+      一个爱骑行的科技粉
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://leeyefei.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
   </div>
 </div>
 
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              放下过去，让心归零
-            </h2>
-            <div class="post-info">
-              <span>
-                2020-03-23
-              </span>
-              <span>
-                4 min read
-              </span>
-              
-                <a href="https://leeyefei.github.io/tag/suibi/" class="post-tag">
-                  # 随笔
-                </a>
-              
-            </div>
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">放下过去，让心归零</h2>
+            <div class="post-date">2020-03-23</div>
             
-            <div class="post-content-wrapper">
-              <div class="post-content">
-                <p>人生不易，不要笑话别人。家家都有难念的经，人人都有难唱的曲。再风光的人，背后也有寒凉苦楚；再幸福的人，内心也有无奈难处。谁的人生都不易，笑人等于笑己，尊重别人就是尊重自己。最穷无非讨饭，不死总会出头。谁的人生十全十美，谁的生活没有薄凉，谁敢保证一直都是人生得意。</p>
+            <div class="post-content" v-pre>
+              <p>人生不易，不要笑话别人。家家都有难念的经，人人都有难唱的曲。再风光的人，背后也有寒凉苦楚；再幸福的人，内心也有无奈难处。谁的人生都不易，笑人等于笑己，尊重别人就是尊重自己。最穷无非讨饭，不死总会出头。谁的人生十全十美，谁的生活没有薄凉，谁敢保证一直都是人生得意。</p>
 <!-- more -->
 <p>金无足赤，人无完人。做人要真诚、谦和，善待别人，温暖自己。人，是活给自己看的。别奢望人人都懂你，别要求事事都如意。苦累中，懂得安慰自己。没人心疼，也要坚强；没人鼓掌，也要飞翔；没人欣赏，也要芬芳。</p>
 <p>生活，没有模板，只需心灯一盏。烦时，找找乐，别丢了幸福；忙时，偷偷闲，别丢了健康；累时，停停手，别丢了快乐。平凡生活中，忙绿于工作，安然于家庭。不求事业多大进步，只愿生活甜美温馨；不想生活多么富有，只愿家人健康欢欣。</p>
@@ -136,102 +148,82 @@
 <p>人生若有牵手一人，心灵相通，冷暖与共，可谓幸福；人生短短，真心难遇，知音难得，遇之，加倍呵护，情愫漠淡，真爱难求，深情难许，得之，倍加珍惜，约定今生。</p>
 <p>一段路，走了很久，依然看不到希望，那就改变方向；一件事，想了很久，依然纠结于心，那就选择放下；一些人，交了很久，却感觉不到真诚，那就选择离开。一种活法，坚持了很久，依然感觉不到快乐，那就选择改变。放下过去，让心归零……</p>
 
-              </div>
-              <div class="toc-container">
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://leeyefei.github.io/tag/suibi/" class="tag">
+                    随笔
+                  </a>
                 
               </div>
-            </div>
-          </article>
-        </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://leeyefei.github.io/post/nload-linux-ming-ling-xing-xia-xian-shi-shi-shi-wang-su/">
+                  <h3 class="post-title">
+                    Nload-linux命令行下显示实时网速
+                  </h3>
+                </a>
+              </div>
+            
 
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://leeyefei.github.io/post/nload-linux-ming-ling-xing-xia-xian-shi-shi-shi-wang-su/">
-              <h3 class="post-title">
-                Nload-linux命令行下显示实时网速
-              </h3>
-            </a>
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
           </div>
-        
 
-        
-          
-            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
-<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
-
-<div id="gitalk-container"></div>
-
-<script>
-
-  var gitalk = new Gitalk({
-    clientID: '',
-    clientSecret: '',
-    repo: 'leeyefei.github.io',
-    owner: 'leeyefei',
-    admin: ['leeyefei'],
-    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
-    distractionFreeMode: false  // Facebook-like distraction free mode
-  })
-
-  gitalk.render('gitalk-container')
-
-</script>
-
-          
-
-          
-        
-
-        <div class="site-footer">
-  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
-  <a class="rss" href="https://leeyefei.github.io/atom.xml" target="_blank">
-    <i class="ri-rss-line"></i> RSS
-  </a>
-</div>
-
+        </div>
       </div>
     </div>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
     <script>
-      hljs.initHighlightingOnLoad()
 
-      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'leeyefei.github.io',
+        owner: 'leeyefei',
+        admin: ['leeyefei'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
 
-      // This should probably be throttled.
-      // Especially because it triggers during smooth scrolling.
-      // https://lodash.com/docs/4.17.10#throttle
-      // You could do like...
-      // window.addEventListener("scroll", () => {
-      //    _.throttle(doThatStuff, 100);
-      // });
-      // Only not doing it here to keep this Pen dependency-free.
-
-      window.addEventListener("scroll", event => {
-        let fromTop = window.scrollY;
-
-        mainNavLinks.forEach((link, index) => {
-          let section = document.getElementById(decodeURI(link.hash).substring(1));
-          let nextSection = null
-          if (mainNavLinks[index + 1]) {
-            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
-          }
-          if (section.offsetTop <= fromTop) {
-            if (nextSection) {
-              if (nextSection.offsetTop > fromTop) {
-                link.classList.add("current");
-              } else {
-                link.classList.remove("current");    
-              }
-            } else {
-              link.classList.add("current");
-            }
-          } else {
-            link.classList.remove("current");
-          }
-        });
-      });
+      gitalk.render('gitalk-container')
 
     </script>
+  
+
+  
+
+
+
+
   </body>
 </html>

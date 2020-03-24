@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | 日照骑行者</title>
+<title>终端ssh下载上传文件命令 | 日照骑行者</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -12,13 +12,29 @@
 <link rel="stylesheet" href="https://leeyefei.github.io/styles/main.css">
 
 
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
 
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 
 
-    <meta name="description" content="一个爱骑行的科技粉">
+    <meta name="description" content="安装工具
+yum install  lrzsz -y
+
+上传文件
+rz
+上传文件并且覆盖
+rz -y
+下载文件
+sz 文件名称
+..." />
+    <meta name="keywords" content="macos,linux" />
   </head>
   <body>
     <div id="app" class="main">
@@ -122,18 +138,56 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">终端ssh下载上传文件命令</h2>
+            <div class="post-date">2020-03-24</div>
             
-              <a class="tag" href="https://leeyefei.github.io/tag/macos/">macos</a>
+            <div class="post-content" v-pre>
+              <h1 id="安装工具">安装工具</h1>
+<p>yum install  lrzsz -y</p>
+<!-- more -->
+<h1 id="上传文件">上传文件</h1>
+<p>rz</p>
+<h1 id="上传文件并且覆盖">上传文件并且覆盖</h1>
+<p>rz -y</p>
+<h1 id="下载文件">下载文件</h1>
+<p>sz 文件名称</p>
+
+            </div>
             
-              <a class="tag" href="https://leeyefei.github.io/tag/linux/">linux</a>
+              <div class="tag-container">
+                
+                  <a href="https://leeyefei.github.io/tag/macos/" class="tag">
+                    macos
+                  </a>
+                
+                  <a href="https://leeyefei.github.io/tag/linux/" class="tag">
+                    linux
+                  </a>
+                
+              </div>
             
-              <a class="tag" href="https://leeyefei.github.io/tag/suibi/">随笔</a>
             
-              <a class="tag" href="https://leeyefei.github.io/tag/bike/">骑行</a>
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://leeyefei.github.io/post/macos-xia-iterm2-chang-yong-kuai-jie-ming-ling/">
+                  <h3 class="post-title">
+                    Macos下iterm2常用快捷命令
+                  </h3>
+                </a>
+              </div>
             
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
           </div>
+
         </div>
       </div>
     </div>
@@ -153,6 +207,29 @@ var app = new Vue({
 </script>
 
 
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'leeyefei.github.io',
+        owner: 'leeyefei',
+        admin: ['leeyefei'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
 
 
 
