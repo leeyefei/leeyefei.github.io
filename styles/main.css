@@ -759,6 +759,10 @@ a {
   margin: 4px 8px;
 }
 
+      .sidebar .top-container .site-nav {
+        color: #ced4da;
+      }
+    
       body {
         background: #e9ecef;
       }
