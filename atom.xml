@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://leeyefei.github.io</id>
     <title>日照骑行者</title>
-    <updated>2020-03-24T13:21:23.218Z</updated>
+    <updated>2020-03-24T13:42:47.304Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://leeyefei.github.io"/>
     <link rel="self" href="https://leeyefei.github.io/atom.xml"/>
@@ -10,6 +10,56 @@
     <logo>https://leeyefei.github.io/images/avatar.png</logo>
     <icon>https://leeyefei.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 日照骑行者</rights>
+    <entry>
+        <title type="html"><![CDATA[如何用家用电脑挖门罗币/XMR]]></title>
+        <id>https://leeyefei.github.io/post/ru-he-yong-jia-yong-dian-nao-wa-men-luo-bi-xmr/</id>
+        <link href="https://leeyefei.github.io/post/ru-he-yong-jia-yong-dian-nao-wa-men-luo-bi-xmr/">
+        </link>
+        <updated>2020-03-24T13:26:52.000Z</updated>
+        <content type="html"><![CDATA[<p>比特币的持续增值也带动了其他加密货币的市场价值的增涨，相信很多小伙伴也想拥有自己的加密货币，等它升值后抛售赚钱，获得加密货币的方法通常有两种：</p>
+<p>一、通过交易市场购买，加密货币。</p>
+<p>想交易市场购买门罗币的小伙伴可以使用“火币网”购买门罗币，当然也可以购买其他的加密货币，由于本文主要讲挖币的，对于买币就不多赘述，需要的小伙伴可以去火币网购买。</p>
+<p>火币网链接：https://www.hbg.com/zh-cn/<br>
+<img src="https://leeyefei.github.io/post-images/1585056659599.png" alt="" loading="lazy"></p>
+<p>二、通过挖矿获得加密货币。</p>
+<p>门罗币（Monero，缩写：XMR）是一个创建于2014年4月开源的加密货币。Monero基于CryptoNote协议的电子货币，其对于CPU相对比较友好，也是少数可以用CPU挖掘的加密货币，每枚高达$92大概等于647RMB。下面开始详细步骤：。<br>
+<img src="https://leeyefei.github.io/post-images/1585056688773.png" alt="" loading="lazy"></p>
+<p>1.设置你的钱包。</p>
+<p>Ⅰ.步骤一:钱包下载。挖掘门罗币肯定需要准备一个门罗币电子钱包，在这里笔者是用的官方提供的钱包，你可以去官方的网站下载需要的版本，在这里笔者是下载的Window64版的电子钱包。</p>
+<p>门罗币官方链接：https://web.getmonero.org/downloads/<br>
+<img src="https://leeyefei.github.io/post-images/1585056770623.png" alt="" loading="lazy"></p>
+<p>Ⅱ.步骤二:解压钱包。下载后解压，打开钱包。<br>
+<img src="https://leeyefei.github.io/post-images/1585056788216.png" alt="" loading="lazy"></p>
+<p>Ⅲ.步骤三:选语言，选择语言。<br>
+<img src="https://leeyefei.github.io/post-images/1585056806741.png" alt="" loading="lazy"></p>
+<p><img src="https://leeyefei.github.io/post-images/1585056830393.png" alt="" loading="lazy"><br>
+        Ⅳ.步骤四：选择模式，在这里就选择简易模式就可以了，简易模式不用下载区块数据包。<br>
+<img src="https://leeyefei.github.io/post-images/1585056846738.png" alt="" loading="lazy"></p>
+<p>Ⅴ.步骤五：设置好你的钱包的名字，你存放钱包的位置，值得注意的是要记好的助记种子，截屏或用笔抄下来，保存在跟网络隔绝的地方，助记种子用于在钱包丢失后，找回你的钱包。<br>
+<img src="https://leeyefei.github.io/post-images/1585056868341.png" alt="" loading="lazy"></p>
+<p>Ⅵ.步骤六：设置你的钱包密码。<br>
+<img src="https://leeyefei.github.io/post-images/1585056892732.jpg" alt="" loading="lazy"></p>
+<p>Ⅶ.步骤七：打开钱包。</p>
+<figure data-type="image" tabindex="1"><img src="https://leeyefei.github.io/post-images/1585056910911.jpg" alt="" loading="lazy"></figure>
+<p>Ⅷ.步骤八：现在已经进入了钱包的主界面。在这里选择“收款”界面并将收款address复制下来。</p>
+<p><img src="https://leeyefei.github.io/post-images/1585056928215.jpg" alt="" loading="lazy"><br>
+        终于把钱包设置好了，下面要做的是，下载挖矿软件。</p>
+<p>2.下载挖矿软件。</p>
+<p>Ⅰ.步骤一：笔者使用的是 xmrig进行挖矿，小伙伴可根据自己的需要下载挖矿软件。</p>
+<p>软件链接：https://github.com/xmrig/xmrig/releases/tag/v5.10.0<br>
+<img src="https://leeyefei.github.io/post-images/1585057068303.png" alt="" loading="lazy"></p>
+<p>Ⅱ.步骤二：打开挖矿软件目录，打开配置文件，设置修改一些挖矿参数，在这里笔者使用的Visual Studio 2017这个软件打开的配置文件，小伙伴如果电脑上有合适的软件，也可以使用，不一定跟笔者使用同样的软件，如果没有，小伙伴可以在微软的官网上下载Visual Studio这个软件，个人版是免费使用的。<br>
+<img src="https://leeyefei.github.io/post-images/1585057114211.png" alt="" loading="lazy"></p>
+<p>Ⅲ.步骤三：按照下图设置参数，设置好后保存配置文件。</p>
+<figure data-type="image" tabindex="2"><img src="https://leeyefei.github.io/post-images/1585057154609.png" alt="" loading="lazy"></figure>
+<p>Ⅳ.步骤四：打开矿池。在这里笔者是用的猫池。进入猫池点击个人面板，然后填写钱包地址，也就是填写在设置钱包时，“复制”的钱包地址，填写好后点击查看。</p>
+<p>猫池链接：https://c3pool.com/cn/#/ports</p>
+<figure data-type="image" tabindex="3"><img src="https://leeyefei.github.io/post-images/1585057189862.jpg" alt="" loading="lazy"></figure>
+<p>Ⅴ.步骤五：然后就可以运行挖矿软件了。</p>
+<figure data-type="image" tabindex="4"><img src="https://leeyefei.github.io/post-images/1585057218401.png" alt="" loading="lazy"></figure>
+<p>这样普通电脑就可以挖矿了，挖矿收益会因电脑性能差异而不同，普通电脑挖矿，收益很少，比不了专业矿机的收益。谢谢各位的观看，觉得不错的点个赞吧。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[用 screenfetch 和 linux_logo 显示带有酷炫 Linux 标志的基本硬件信息]]></title>
         <id>https://leeyefei.github.io/post/yong-screenfetch-he-linux_logo-xian-shi-dai-you-ku-xuan-linux-biao-zhi-de-ji-ben-ying-jian-xin-xi/</id>
@@ -673,25 +723,6 @@ jps 192.168.0.77<br>
 列出远程服务器192.168.0.77机器所有的jvm实例，采用rmi协议，默认连接端口为1099<br>
 （前提是远程服务器提供jstatd服务）<br>
 注：jps命令有个地方很不好，似乎只能显示当前用户的java进程，要显示其他用户的还是只能用unix/linux的ps命令。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[心在远方]]></title>
-        <id>https://leeyefei.github.io/post/about/</id>
-        <link href="https://leeyefei.github.io/post/about/">
-        </link>
-        <updated>2019-01-25T11:09:48.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>心有多远，前方的路就有多远。<br>
-这不公是一次身体的放飞，更是一次心灵的旅行。。。</p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>心有多远，前方的路就有多远。<br>
-这不公是一次身体的放飞，更是一次心灵的旅行。。。</p>
-</blockquote>
-<!-- more -->
-<figure data-type="image" tabindex="1"><img src="https://leeyefei.github.io/post-images/1584973420590.jpg" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
