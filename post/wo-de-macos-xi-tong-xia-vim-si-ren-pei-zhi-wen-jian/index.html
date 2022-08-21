@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>我的Macos系统下VIM私人配置文件 | 日照骑行者</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://leeyefei.github.io/favicon.ico?v=1661091407159">
+<link rel="stylesheet" href="https://leeyefei.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="私人vim配置，喜欢的可以拿去免费使用
+syntax on
+autocmd InsertLeave * se nocul
+autocmd InsertEnter * se cul
+
+set smartindent
+set autoinden..." />
+    <meta name="keywords" content="vim,终端,linux,mac" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://leeyefei.github.io">
+        <img src="https://leeyefei.github.io/images/avatar.png?v=1661091407159" class="site-logo">
+        <h1 class="site-title">日照骑行者</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://leeyefei.github.io" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/leeyefei" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个爱好骑行的科技粉
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://leeyefei.github.io" target="_blank">leeyefei</a> | <a class="rss" href="https://leeyefei.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">我的Macos系统下VIM私人配置文件</h2>
+            <div class="post-date">2022-08-16</div>
+            
+              <div class="feature-container" style="background-image: url('https://leeyefei.github.io/post-images/wo-de-macos-xi-tong-xia-vim-si-ren-pei-zhi-wen-jian.webp')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>私人vim配置，喜欢的可以拿去免费使用<br>
+syntax on</p>
+<p>autocmd InsertLeave * se nocul<br>
+autocmd InsertEnter * se cul</p>
+<!-- more -->
+<p>set smartindent</p>
+<p>set autoindent</p>
+<p>set confirm</p>
+<p>set tabstop=4</p>
+<p>set softtabstop=4<br>
+set shiftwidth=4</p>
+<p>set noexpandtab</p>
+<p>set number</p>
+<p>set history=50</p>
+<p>set hlsearch<br>
+set incsearch</p>
+<p>set gdefault</p>
+<p>set encoding=utf-8<br>
+set fileencodings=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936,utf-16,big5,euc-jp,latin1</p>
+<p>colorscheme torte</p>
+<p>set langmenu=zn_CN.UTF-8<br>
+set helplang=cn</p>
+<p>set cmdheight=2</p>
+<p>set ruler</p>
+<p>set laststatus=2</p>
+<p>set showcmd</p>
+<p>set scrolloff=3</p>
+<p>set showmatch</p>
+<p>set matchtime=5</p>
+<p>set autowrite</p>
+<p>set wildmenu</p>
+<p>set linespace=2</p>
+<p>set whichwrap=b,s,&lt;,&gt;,[,]</p>
+<p>filetype plugin indent on</p>
+<p>vnoremap $1 <esc><code>&gt;a)&lt;esc&gt;</code>&lt;i(<esc><br>
+vnoremap $2 <esc><code>&gt;a]&lt;esc&gt;</code>&lt;i[<esc><br>
+vnoremap $3 <esc><code>&gt;a}&lt;esc&gt;</code>&lt;i{<esc><br>
+vnoremap $$ <esc><code>&gt;a”&lt;esc&gt;</code>&lt;i“<esc><br>
+vnoremap $q <esc><code>&gt;a’&lt;esc&gt;</code>&lt;i‘<esc><br>
+vnoremap $e <esc><code>&gt;a”&lt;esc&gt;</code>&lt;i“<esc></p>
+<p>map <F7> :if exists(“syntax_on”) <BAR><br>
+\    syntax off <BAR><CR><br>
+\  else <BAR><br>
+\syntax enable <BAR><br>
+\  endif</p>
+<p>map <F5> :call CompileRunGcc()<CR><br>
+func! CompileRunGcc()<br>
+exec “w”<br>
+exec “!gcc % -o %&lt;“<br>
+exec “! ./%&lt;“<br>
+endfunc</p>
+<p>map <F6> :call CompileRunGpp()<CR></p>
+<p>func! CompileRunGpp()</p>
+<p>exec &quot;w&quot;</p>
+<p>exec &quot;!g++ -g -o %&lt; %&quot;</p>
+<p>exec &quot;! ./%&lt;&quot;</p>
+<p>endfunc</p>
+<p>au BufWrite /private/tmp/crontab.* set nowritebackup</p>
+<p>au BufWrite /private/etc/pw.* set nowritebackup</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://leeyefei.github.io/tag/7mM-1gX_j/" class="tag">
+                    vim
+                  </a>
+                
+                  <a href="https://leeyefei.github.io/tag/VpJHGbxEh/" class="tag">
+                    终端
+                  </a>
+                
+                  <a href="https://leeyefei.github.io/tag/D1T8jA57d/" class="tag">
+                    linux
+                  </a>
+                
+                  <a href="https://leeyefei.github.io/tag/X47LkC6en/" class="tag">
+                    mac
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://leeyefei.github.io/post/macos-xia-vim-zi-dong-bian-yi-yun-xing-cpp-wen-jian-she-zhi/">
+                  <h3 class="post-title">
+                    Macos下vim自动编译运行.cpp文件设置
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'leeyefei.github.io',
+        owner: 'leeyefei',
+        admin: ['leeyefei'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

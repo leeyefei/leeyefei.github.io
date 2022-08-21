@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://leeyefei.github.io</id>
+    <title>日照骑行者</title>
+    <updated>2022-08-21T14:19:51.358Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://leeyefei.github.io"/>
+    <link rel="self" href="https://leeyefei.github.io/atom.xml"/>
+    <subtitle>一个爱好骑行的科技粉</subtitle>
+    <logo>https://leeyefei.github.io/images/avatar.png</logo>
+    <icon>https://leeyefei.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, 日照骑行者</rights>
+    <entry>
+        <title type="html"><![CDATA[Linux常用命令大全（非常全！！！）]]></title>
+        <id>https://leeyefei.github.io/post/linux-chang-yong-ming-ling-da-quan-fei-chang-quan/</id>
+        <link href="https://leeyefei.github.io/post/linux-chang-yong-ming-ling-da-quan-fei-chang-quan/">
+        </link>
+        <updated>2022-08-20T16:00:48.000Z</updated>
+        <summary type="html"><![CDATA[<p>最近都在和Linux打交道，感觉还不错。我觉得Linux相比windows比较麻烦的就是很多东西都要用命令来控制，当然，这也是很多人喜欢linux的原因，比较短小但却功能强大。我将我了解到的命令列举一下，仅供大家参考：</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>最近都在和Linux打交道，感觉还不错。我觉得Linux相比windows比较麻烦的就是很多东西都要用命令来控制，当然，这也是很多人喜欢linux的原因，比较短小但却功能强大。我将我了解到的命令列举一下，仅供大家参考：</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[那些比博燃的运动番，《飚速宅男》绝对让你停不下来]]></title>
+        <id>https://leeyefei.github.io/post/na-xie-bi-bo-ran-de-yun-dong-fan-lesslessbiao-su-zhai-nan-greatergreater-jue-dui-rang-ni-ting-bu-xia-lai/</id>
+        <link href="https://leeyefei.github.io/post/na-xie-bi-bo-ran-de-yun-dong-fan-lesslessbiao-su-zhai-nan-greatergreater-jue-dui-rang-ni-ting-bu-xia-lai/">
+        </link>
+        <updated>2022-08-20T13:12:47.000Z</updated>
+        <summary type="html"><![CDATA[<p>你有没有那么一瞬间会因为被动漫中的热血感染，从而选择去学习动漫中那些语言动作。<br>
+像小时候的我们，就会屁颠屁颠学习《七龙珠》中的龟派气功；</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>你有没有那么一瞬间会因为被动漫中的热血感染，从而选择去学习动漫中那些语言动作。<br>
+像小时候的我们，就会屁颠屁颠学习《七龙珠》中的龟派气功；</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[我的Macos系统下VIM私人配置文件]]></title>
+        <id>https://leeyefei.github.io/post/wo-de-macos-xi-tong-xia-vim-si-ren-pei-zhi-wen-jian/</id>
+        <link href="https://leeyefei.github.io/post/wo-de-macos-xi-tong-xia-vim-si-ren-pei-zhi-wen-jian/">
+        </link>
+        <updated>2022-08-16T10:49:18.000Z</updated>
+        <summary type="html"><![CDATA[<p>私人vim配置，喜欢的可以拿去免费使用<br>
+syntax on</p>
+<p>autocmd InsertLeave * se nocul<br>
+autocmd InsertEnter * se cul</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>私人vim配置，喜欢的可以拿去免费使用<br>
+syntax on</p>
+<p>autocmd InsertLeave * se nocul<br>
+autocmd InsertEnter * se cul</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Macos下vim自动编译运行.cpp文件设置]]></title>
+        <id>https://leeyefei.github.io/post/macos-xia-vim-zi-dong-bian-yi-yun-xing-cpp-wen-jian-she-zhi/</id>
+        <link href="https://leeyefei.github.io/post/macos-xia-vim-zi-dong-bian-yi-yun-xing-cpp-wen-jian-she-zhi/">
+        </link>
+        <updated>2022-08-16T10:30:54.000Z</updated>
+        <summary type="html"><![CDATA[<p>vim是大神程序员的最爱，但每次都要g++编译，然后再运行.out文件确实挺麻烦的，其实只需要在.vimrc文件里简单添加下面几行代码就可以一键编译和运行文件了！<br>
+map <F6> :call CompileRunGpp()<CR></p>
+<p>func! CompileRunGpp()</p>
+<p>exec &quot;w&quot;</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>vim是大神程序员的最爱，但每次都要g++编译，然后再运行.out文件确实挺麻烦的，其实只需要在.vimrc文件里简单添加下面几行代码就可以一键编译和运行文件了！<br>
+map <F6> :call CompileRunGpp()<CR></p>
+<p>func! CompileRunGpp()</p>
+<p>exec &quot;w&quot;</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MAC系统下的VIM配置]]></title>
+        <id>https://leeyefei.github.io/post/mac-xi-tong-xia-de-vim-pei-zhi/</id>
+        <link href="https://leeyefei.github.io/post/mac-xi-tong-xia-de-vim-pei-zhi/">
+        </link>
+        <updated>2022-08-16T10:26:57.000Z</updated>
+        <summary type="html"><![CDATA[<p>打开用户vimrc文件并在里面添加各种Vim命令：<br>
+将下面命令复制到.vimrc文件下面：<br>
+————————————————————————————————————<br>
+syntax on<br>
+” 语法高亮</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>打开用户vimrc文件并在里面添加各种Vim命令：<br>
+将下面命令复制到.vimrc文件下面：<br>
+————————————————————————————————————<br>
+syntax on<br>
+” 语法高亮</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[终端中的文件管理器ranger]]></title>
+        <id>https://leeyefei.github.io/post/zhong-duan-zhong-de-wen-jian-guan-li-qi-ranger/</id>
+        <link href="https://leeyefei.github.io/post/zhong-duan-zhong-de-wen-jian-guan-li-qi-ranger/">
+        </link>
+        <updated>2022-08-14T20:42:40.000Z</updated>
+        <summary type="html"><![CDATA[<p>自从用了vim后，感觉到了终端中的应用程序也可以有类似于图形化的操作和鼠标支持。无论是谁，在使用电脑的时候总是离不开文件操作的，那么有没有什么简单易用的类似于图形化的文件管理工具呢？</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>自从用了vim后，感觉到了终端中的应用程序也可以有类似于图形化的操作和鼠标支持。无论是谁，在使用电脑的时候总是离不开文件操作的，那么有没有什么简单易用的类似于图形化的文件管理工具呢？</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[信息学奥赛学习必备网站]]></title>
+        <id>https://leeyefei.github.io/post/xin-xi-xue-ao-sai-xue-xi-bi-bei-wang-zhan/</id>
+        <link href="https://leeyefei.github.io/post/xin-xi-xue-ao-sai-xue-xi-bi-bei-wang-zhan/">
+        </link>
+        <updated>2022-08-14T13:29:14.000Z</updated>
+        <summary type="html"><![CDATA[<p>青少年信息学（计算机）奥林匹克竞赛（早期称为青少年计算机程序设计竞赛）是指在广大青少年中普及计算机教育，推广计算机应用的一项学科性竞赛活动。全国从1984年开始举办全国性竞赛。而自从1989年我国参加第一届国际信息学奥林匹克（International Olympiad in Informatics, 简称IOI）以来，全国青少年计算机程序设计竞赛也更名为全国青少年信息学（计算机）奥林匹克竞赛（National Olympiad in Informatics, 简称NOI）。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>青少年信息学（计算机）奥林匹克竞赛（早期称为青少年计算机程序设计竞赛）是指在广大青少年中普及计算机教育，推广计算机应用的一项学科性竞赛活动。全国从1984年开始举办全国性竞赛。而自从1989年我国参加第一届国际信息学奥林匹克（International Olympiad in Informatics, 简称IOI）以来，全国青少年计算机程序设计竞赛也更名为全国青少年信息学（计算机）奥林匹克竞赛（National Olympiad in Informatics, 简称NOI）。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[iterm2分屏切换快捷指令]]></title>
+        <id>https://leeyefei.github.io/post/iterm2-fen-ping-qie-huan-kuai-jie-zhi-ling/</id>
+        <link href="https://leeyefei.github.io/post/iterm2-fen-ping-qie-huan-kuai-jie-zhi-ling/">
+        </link>
+        <updated>2022-08-14T13:22:27.000Z</updated>
+        <summary type="html"><![CDATA[<p>⌘Command + W 关闭当前窗口或当前Tab<br>
+⌘Command + T 新建Tab</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>⌘Command + W 关闭当前窗口或当前Tab<br>
+⌘Command + T 新建Tab</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[盘点国内十大最美骑行路线 中国十大骑行路线]]></title>
+        <id>https://leeyefei.github.io/post/pan-dian-guo-nei-shi-da-zui-mei-qi-xing-lu-xian-zhong-guo-shi-da-qi-xing-lu-xian/</id>
+        <link href="https://leeyefei.github.io/post/pan-dian-guo-nei-shi-da-zui-mei-qi-xing-lu-xian-zhong-guo-shi-da-qi-xing-lu-xian/">
+        </link>
+        <updated>2022-08-14T13:10:30.000Z</updated>
+        <summary type="html"><![CDATA[<p>乌鲁木齐→敦煌<br>
+风景★★★ 难度★★ 流行 ★★<br>
+乌鲁木齐市→达坂城区→吐鲁番市→鄯善县→一碗泉村→哈密市→骆驼圈子村→星星峡镇→甘肃省柳园镇→西湖乡→敦煌市。全程约990公里。</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>乌鲁木齐→敦煌<br>
+风景★★★ 难度★★ 流行 ★★<br>
+乌鲁木齐市→达坂城区→吐鲁番市→鄯善县→一碗泉村→哈密市→骆驼圈子村→星星峡镇→甘肃省柳园镇→西湖乡→敦煌市。全程约990公里。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[国内最美的7条骑行路线推荐]]></title>
+        <id>https://leeyefei.github.io/post/guo-nei-zui-mei-de-7-tiao-qi-xing-lu-xian-tui-jian/</id>
+        <link href="https://leeyefei.github.io/post/guo-nei-zui-mei-de-7-tiao-qi-xing-lu-xian-tui-jian/">
+        </link>
+        <updated>2022-08-14T13:04:24.000Z</updated>
+        <summary type="html"><![CDATA[<p>曾经，中国也是自行车大国，家家至少都有一量自行车。但是随着社会的发展，生活的进步，取而代之的却是路上越来越拥堵的交通，和越来越开不起的汽车。抛开一切高科技的代步工具，骑上最原始的脚踏车，到国内最美丽的骑行路上看一看，那里才有我们最需要的时光。为您推荐国内几条最经典骑行路线……</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>曾经，中国也是自行车大国，家家至少都有一量自行车。但是随着社会的发展，生活的进步，取而代之的却是路上越来越拥堵的交通，和越来越开不起的汽车。抛开一切高科技的代步工具，骑上最原始的脚踏车，到国内最美丽的骑行路上看一看，那里才有我们最需要的时光。为您推荐国内几条最经典骑行路线……</p>
+]]></content>
+    </entry>
+</feed>

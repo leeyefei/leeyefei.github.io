@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>终端中的文件管理器ranger | 日照骑行者</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://leeyefei.github.io/favicon.ico?v=1661091407159">
+<link rel="stylesheet" href="https://leeyefei.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="自从用了vim后，感觉到了终端中的应用程序也可以有类似于图形化的操作和鼠标支持。无论是谁，在使用电脑的时候总是离不开文件操作的，那么有没有什么简单易用的类似于图形化的文件管理工具呢？
+
+ranger
+安装
+在archlinux中安装
+sud..." />
+    <meta name="keywords" content="终端,linux,mac" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://leeyefei.github.io">
+        <img src="https://leeyefei.github.io/images/avatar.png?v=1661091407159" class="site-logo">
+        <h1 class="site-title">日照骑行者</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://leeyefei.github.io" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/leeyefei" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个爱好骑行的科技粉
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://leeyefei.github.io" target="_blank">leeyefei</a> | <a class="rss" href="https://leeyefei.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">终端中的文件管理器ranger</h2>
+            <div class="post-date">2022-08-15</div>
+            
+              <div class="feature-container" style="background-image: url('https://leeyefei.github.io/post-images/zhong-duan-zhong-de-wen-jian-guan-li-qi-ranger.gif')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>自从用了vim后，感觉到了终端中的应用程序也可以有类似于图形化的操作和鼠标支持。无论是谁，在使用电脑的时候总是离不开文件操作的，那么有没有什么简单易用的类似于图形化的文件管理工具呢？</p>
+<!-- more -->
+<p>ranger</p>
+<p>安装</p>
+<p>在archlinux中安装</p>
+<p>sudo pacman -S  --noconfirm ranger<br>
+安装依赖</p>
+<p>sudo pacman -S  --noconfirm libcaca highlight atool lynx w3m elinks  mediainfo<br>
+在macOS中安装<br>
+安装ranger，可以使用基本的功能</p>
+<p>brew install ranger<br>
+安装依赖，这样可以使用一些扩展的功能,主要是预览相关的。</p>
+<p>brew install libcaca highlight atool lynx w3m elinks poppler transmission mediainfo exiftool</p>
+<p>使用</p>
+<figure data-type="image" tabindex="1"><img src="https://leeyefei.github.io/post-images/1660510186068.png" alt="" loading="lazy"></figure>
+<p>支持鼠标操作<br>
+文本文件上按回车可以直接打开vim编辑文件<br>
+响应非常快，非常快<br>
+配置ranger使其支持图片浏览</p>
+<p>创建imgcat</p>
+<p>vim imgcat</p>
+<p>并写入以下内容：</p>
+<p>#!/bin/bash</p>
+<h1 id="tmux-requires-unrecognized-osc-sequences-to-be-wrapped-with-dcs-tmux">tmux requires unrecognized OSC sequences to be wrapped with DCS tmux;</h1>
+<h1 id="sequence-st-and-for-all-escs-in-sequence-to-be-replaced-with-esc-esc-it"><sequence> ST, and for all ESCs in <sequence> to be replaced with ESC ESC. It</h1>
+<h1 id="only-accepts-esc-backslash-for-st-we-use-term-instead-of-tmux-because-term">only accepts ESC backslash for ST. We use TERM instead of TMUX because TERM</h1>
+<h1 id="gets-passed-through-ssh">gets passed through ssh.</h1>
+<p>function print_osc() {<br>
+if [[ $TERM == screen* ]]; then<br>
+printf &quot;\033Ptmux;\033\033]&quot;<br>
+else<br>
+printf &quot;\033]&quot;<br>
+fi<br>
+}</p>
+<h1 id="more-of-the-tmux-workaround-described-above">More of the tmux workaround described above.</h1>
+<p>function print_st() {<br>
+if [[ $TERM == screen* ]]; then<br>
+printf &quot;\a\033\&quot;<br>
+else<br>
+printf &quot;\a&quot;<br>
+fi<br>
+}</p>
+<p>function load_version() {<br>
+if [ -z <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi>I</mi><mi>M</mi><mi>G</mi><mi>C</mi><mi>A</mi><msub><mi>T</mi><mi>B</mi></msub><mi>A</mi><mi>S</mi><mi>E</mi><mn>6</mn><msub><mn>4</mn><mi>V</mi></msub><mi>E</mi><mi>R</mi><mi>S</mi><mi>I</mi><mi>O</mi><mi>N</mi><mo>+</mo><mi>x</mi></mrow><mo>]</mo><mo separator="true">;</mo><mi>t</mi><mi>h</mi><mi>e</mi><mi>n</mi><mi>I</mi><mi>M</mi><mi>G</mi><mi>C</mi><mi>A</mi><msub><mi>T</mi><mi>B</mi></msub><mi>A</mi><mi>S</mi><mi>E</mi><mn>6</mn><msub><mn>4</mn><mi>V</mi></msub><mi>E</mi><mi>R</mi><mi>S</mi><mi>I</mi><mi>O</mi><mi>N</mi><mo>=</mo></mrow><annotation encoding="application/x-tex">{IMGCAT_BASE64_VERSION+x} ]; then
+        IMGCAT_BASE64_VERSION=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">A</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05017em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mord">6</span><span class="mord"><span class="mord">4</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.22222em;">V</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">x</span></span><span class="mclose">]</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">G</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mord mathdefault">A</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05017em;">B</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mord">6</span><span class="mord"><span class="mord">4</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.22222em;">V</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span></span>(base64 --version 2&gt;&amp;1)<br>
+export IMGCAT_BASE64_VERSION<br>
+fi<br>
+}</p>
+<p>function b64_encode() {<br>
+load_version<br>
+if [[ $IMGCAT_BASE64_VERSION =~ GNU ]]; then<br>
+# Disable line wrap<br>
+base64 -w0<br>
+else<br>
+base64<br>
+fi<br>
+}</p>
+<p>function b64_decode() {<br>
+load_version<br>
+if [[ $IMGCAT_BASE64_VERSION =~ fourmilab ]]; then<br>
+BASE64ARG=-d<br>
+elif [[ $IMGCAT_BASE64_VERSION =~ GNU ]]; then<br>
+BASE64ARG=-di<br>
+else<br>
+BASE64ARG=-D<br>
+fi<br>
+base64 $BASE64ARG<br>
+}</p>
+<h1 id="print_image-filename-inline-base64contents-print_filename">print_image filename inline base64contents print_filename</h1>
+<h1 id="filename-filename-to-convey-to-client">filename: Filename to convey to client</h1>
+<h1 id="inline-0-or-1">inline: 0 or 1</h1>
+<h1 id="base64contents-base64-encoded-contents">base64contents: Base64-encoded contents</h1>
+<h1 id="print_filename-if-non-empty-print-the-filename">print_filename: If non-empty, print the filename</h1>
+<h1 id="before-outputting-the-image">before outputting the image</h1>
+<p>function print_image() {<br>
+print_osc<br>
+printf '1337;File='<br>
+if [[ -n <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>]</mo><mo>]</mo><mo separator="true">;</mo><mi>t</mi><mi>h</mi><mi>e</mi><mi>n</mi><mi>p</mi><mi>r</mi><mi>i</mi><mi>n</mi><mi>t</mi><mi>f</mi><mi mathvariant="normal">&quot;</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi><mo>=</mo></mrow><annotation encoding="application/x-tex">1 ]]; then
+        printf &quot;name=%s;&quot; &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mclose">]</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord">&quot;</span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span></span>(printf &quot;%s&quot; &quot;$1&quot; | b64_encode)&quot;<br>
+fi</p>
+<pre><code>printf &quot;%s&quot; &quot;$3&quot; | b64_decode | wc -c | awk '{printf &quot;size=%d&quot;,$1}'
+printf &quot;;inline=%s&quot; &quot;$2&quot;
+printf &quot;:&quot;
+printf &quot;%s&quot; &quot;$3&quot;
+print_st
+printf '\n'
+if [[ -n $4 ]]; then
+    echo &quot;$1&quot;
+fi
+</code></pre>
+<p>}</p>
+<p>function error() {<br>
+echo &quot;ERROR: $*&quot; 1&gt;&amp;2<br>
+}</p>
+<p>function show_help() {<br>
+echo &quot;Usage: imgcat [-p] filename ...&quot; 1&gt;&amp;2<br>
+echo &quot;   or: cat filename | imgcat&quot; 1&gt;&amp;2<br>
+}</p>
+<p>function check_dependency() {<br>
+if ! (builtin command -V &quot;$1&quot; &gt;/dev/null 2&gt;&amp;1); then<br>
+echo &quot;imgcat: missing dependency: can't find $1&quot; 1&gt;&amp;2<br>
+exit 1<br>
+fi<br>
+}</p>
+<h2 id="main">Main</h2>
+<p>if [ -t 0 ]; then<br>
+has_stdin=f<br>
+else<br>
+has_stdin=t<br>
+fi</p>
+<h1 id="show-help-if-no-arguments-and-no-stdin">Show help if no arguments and no stdin.</h1>
+<p>if [ $has_stdin = f ] &amp;&amp; [ $# -eq 0 ]; then<br>
+show_help<br>
+exit<br>
+fi</p>
+<p>check_dependency awk<br>
+check_dependency base64<br>
+check_dependency wc</p>
+<h1 id="look-for-command-line-flags">Look for command line flags.</h1>
+<p>while [ $# -gt 0 ]; do<br>
+case &quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">&quot;</mi><mi>i</mi><mi>n</mi><mo>−</mo><mi>h</mi><mi mathvariant="normal">∣</mi><mo>−</mo><mo>−</mo><mi>h</mi><mi mathvariant="normal">∣</mi><mo>−</mo><mo>−</mo><mi>h</mi><mi>e</mi><mi>l</mi><mi>p</mi><mo>)</mo><mi>s</mi><mi>h</mi><mi>o</mi><msub><mi>w</mi><mi>h</mi></msub><mi>e</mi><mi>l</mi><mi>p</mi><mi>e</mi><mi>x</mi><mi>i</mi><mi>t</mi><mo separator="true">;</mo><mo separator="true">;</mo><mo>−</mo><mi>p</mi><mi mathvariant="normal">∣</mi><mo>−</mo><mo>−</mo><mi>p</mi><mi mathvariant="normal">∣</mi><mo>−</mo><mo>−</mo><mi>p</mi><mi>r</mi><mi>i</mi><mi>n</mi><mi>t</mi><mo>)</mo><mi>p</mi><mi>r</mi><mi>i</mi><mi>n</mi><msub><mi>t</mi><mi>f</mi></msub><mi>i</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi><mo>=</mo><mn>1</mn><mo separator="true">;</mo><mo separator="true">;</mo><mo>−</mo><mi>u</mi><mi mathvariant="normal">∣</mi><mo>−</mo><mo>−</mo><mi>u</mi><mi mathvariant="normal">∣</mi><mo>−</mo><mo>−</mo><mi>u</mi><mi>r</mi><mi>l</mi><mo>)</mo><mi>c</mi><mi>h</mi><mi>e</mi><mi>c</mi><msub><mi>k</mi><mi>d</mi></msub><mi>e</mi><mi>p</mi><mi>e</mi><mi>n</mi><mi>d</mi><mi>e</mi><mi>n</mi><mi>c</mi><mi>y</mi><mi>c</mi><mi>u</mi><mi>r</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>c</mi><mi>o</mi><mi>d</mi><mi>e</mi><msub><mi>d</mi><mi>i</mi></msub><mi>m</mi><mi>a</mi><mi>g</mi><mi>e</mi><mo>=</mo></mrow><annotation encoding="application/x-tex">1&quot; in
+    -h | --h | --help)
+        show_help
+        exit
+        ;;
+    -p | --p | --print)
+        print_filename=1
+        ;;
+    -u | --u | --url)
+        check_dependency curl
+        encoded_image=</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">&quot;</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mord mathdefault">h</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">p</span><span class="mclose">)</span><span class="mord mathdefault">s</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">h</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">p</span><span class="mord mathdefault">e</span><span class="mord mathdefault">x</span><span class="mord mathdefault">i</span><span class="mord mathdefault">t</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord mathdefault">p</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mord mathdefault">p</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.036108em;vertical-align:-0.286108em;"></span><span class="mord">−</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord mathdefault">u</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mord mathdefault">u</span><span class="mord">∣</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">−</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mclose">)</span><span class="mord mathdefault">c</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">e</span><span class="mord mathdefault">p</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord mathdefault">c</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord"><span class="mord mathdefault">d</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span></span></span>(curl -s &quot;$2&quot; | b64_encode) || (<br>
+error &quot;No such file or url $2&quot;<br>
+exit 2<br>
+)<br>
+has_stdin=f<br>
+print_image &quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi mathvariant="normal">&quot;</mi><mn>1</mn><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">2&quot; 1 &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">&quot;</span><span class="mord">1</span><span class="mord">&quot;</span></span></span></span>encoded_image&quot; &quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>r</mi><mi>i</mi><mi>n</mi><msub><mi>t</mi><mi>f</mi></msub><mi>i</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>a</mi><mi>m</mi><mi>e</mi><mi mathvariant="normal">&quot;</mi><mi>s</mi><mi>e</mi><mi>t</mi><mo>−</mo><mo>−</mo><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">print_filename&quot;
+        set -- &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.980548em;vertical-align:-0.286108em;"></span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361079999999999em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.10764em;">f</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord mathdefault">e</span><span class="mord">&quot;</span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mord">&quot;</span></span></span></span>{@:1:1}&quot; &quot;-u&quot; &quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">@</mi><mo>:</mo><mn>3</mn></mrow><mi mathvariant="normal">&quot;</mi><mi>i</mi><mi>f</mi><mo>[</mo><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">{@:3}&quot;
+        if [ &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">@</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mord">3</span></span><span class="mord">&quot;</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">[</span><span class="mord">&quot;</span></span></span></span>#&quot; -eq 2 ]; then<br>
+exit<br>
+fi<br>
+;;<br>
+-*)<br>
+error &quot;Unknown option flag: $1&quot;<br>
+show_help<br>
+exit 1<br>
+;;<br>
+*)<br>
+if [ -r &quot;$1&quot; ]; then<br>
+has_stdin=f<br>
+print_image &quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">&quot;</mi><mn>1</mn><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">1&quot; 1 &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">&quot;</span><span class="mord">1</span><span class="mord">&quot;</span></span></span></span>(b64_encode &lt;&quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">&quot;</mi><mo>)</mo><mi mathvariant="normal">&quot;</mi><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">1&quot;)&quot; &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">&quot;</span><span class="mclose">)</span><span class="mord">&quot;</span><span class="mord">&quot;</span></span></span></span>print_filename&quot;<br>
+else<br>
+error &quot;imgcat: $1: No such file or directory&quot;<br>
+exit 2<br>
+fi<br>
+;;<br>
+esac<br>
+shift<br>
+done</p>
+<h1 id="read-and-print-stdin">Read and print stdin</h1>
+<p>if [ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mi>a</mi><msub><mi>s</mi><mi>s</mi></msub><mi>t</mi><mi>d</mi><mi>i</mi><mi>n</mi><mo>=</mo><mi>t</mi><mo>]</mo><mo separator="true">;</mo><mi>t</mi><mi>h</mi><mi>e</mi><mi>n</mi><mi>p</mi><mi>r</mi><mi>i</mi><mi>n</mi><msub><mi>t</mi><mi>i</mi></msub><mi>m</mi><mi>a</mi><mi>g</mi><mi>e</mi><mi mathvariant="normal">&quot;</mi><mi mathvariant="normal">&quot;</mi><mn>1</mn><mi mathvariant="normal">&quot;</mi></mrow><annotation encoding="application/x-tex">has_stdin = t ]; then
+    print_image &quot;&quot; 1 &quot;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord mathdefault">h</span><span class="mord mathdefault">a</span><span class="mord"><span class="mord mathdefault">s</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">t</span><span class="mord mathdefault">d</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">t</span><span class="mclose">]</span><span class="mpunct">;</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">p</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">e</span><span class="mord">&quot;</span><span class="mord">&quot;</span><span class="mord">1</span><span class="mord">&quot;</span></span></span></span>(cat | b64_encode)&quot; &quot;&quot;<br>
+fi</p>
+<p>exit 0</p>
+<p>把imgcat放到path中方便调用</p>
+<h1 id="设置可执行权限">设置可执行权限</h1>
+<p>chmod +x imgcat</p>
+<h1 id="复制到path之中">复制到path之中</h1>
+<p>cp imgcat /usr/local/bin/</p>
+<p>做完这一步，就可以使用imgcat 图片文件.png来在iterm2终端中显示图片了。</p>
+<figure data-type="image" tabindex="2"><img src="https://leeyefei.github.io/post-images/1660510338983.png" alt="" loading="lazy"></figure>
+<p>如果您是第一次使用游侠，请生成游侠配置文件。</p>
+<p>ranger --copy-config=all</p>
+<p>现在，您可以转到~/.config/ranger生成的文件中：</p>
+<p>cd ~/.config/ranger<br>
+➜  ranger ls -la<br>
+总用量 132<br>
+drwxr-xr-x 2 itkey users  4096  4月 13 16:25 .<br>
+drwxr-xr-x 6 itkey users  4096  4月 13 16:07 ..<br>
+-rw-r--r-- 1 itkey users 62106  4月 13 16:25 commands_full.py<br>
+-rw-r--r-- 1 itkey users  2763  4月 13 16:25 commands.py<br>
+-rw-r--r-- 1 itkey users 24193  4月 13 16:25 rc.conf<br>
+-rw-r--r-- 1 itkey users 14071  4月 13 16:25 rifle.conf<br>
+-rwxr-xr-x 1 itkey users 13758  4月 13 16:25 scope.sh</p>
+<p>让我们快速浏览它们：</p>
+<p>commands.py：与以下命令一起启动的命令 :<br>
+commands_full.py：全套命令<br>
+rc.conf：配置和绑定<br>
+rifle.conf：文件关联（用于打开文件的程序）<br>
+scope.sh：负责各种文件预览<br>
+目前，对我们来说唯一重要的文件是rc.conf。在您喜欢的编辑器中将其打开，并更改以下两行，如下所示：<br>
+set preview_images false 修改成 set preview_images true<br>
+set preview_images_method w3m 修改成 set preview_images_method iterm2</p>
+<p><img src="https://leeyefei.github.io/post-images/1660510358427.png" alt="" loading="lazy"><br>
+配置环境变量</p>
+<p>vim ~/.zshrc在环境变量中增加 下面一行</p>
+<p>export RANGER_LOAD_DEFAULT_RC=FALSE<br>
+预览高度显示</p>
+<p>安装highlight后预览就自动高度显示了，不用额外配置</p>
+<p>sudo pacman -S  --noconfirm highlight<br>
+<img src="https://leeyefei.github.io/post-images/1660510380441.png" alt="" loading="lazy"></p>
+<p>常用操作</p>
+<p>大部分操作与vim类似，常用操作如下：</p>
+<p>yy复制<br>
+dd剪切<br>
+pp粘贴<br>
+cw重命名方法1<br>
+a重命名方法2</p>
+<p>增加图标显示<br>
+效果如下<br>
+<img src="https://leeyefei.github.io/post-images/1660510402134.png" alt="" loading="lazy"><br>
+设置方法：<br>
+https://github.com/alexanderjeurissen/ranger_devicons</p>
+<p>从github下载代码：</p>
+<p>git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons<br>
+echo &quot;default_linemode devicons&quot; &gt;&gt; $HOME/.config/ranger/rc.conf</p>
+<p>第二行，意思编辑rc.conf文件，并在文件中加入：<br>
+default_linemode devicons<br>
+重新进入ranger就发现可以有图标了，这样观感就好了很多了。</p>
+<p>如果出现字体乱码可以参考：<br>
+《macOS中iTerm或终端字体乱码解决办法》https://blog.csdn.net/lxyoucan/article/details/115695733</p>
+<p>显示边框线</p>
+<figure data-type="image" tabindex="3"><img src="https://leeyefei.github.io/post-images/1660510415005.png" alt="" loading="lazy"></figure>
+<p>编辑rc.conf文件</p>
+<p>#显示边框线<br>
+set draw_borders true<br>
+1<br>
+2<br>
+解决卡住</p>
+<p>在macOS中如果开着文件预览，在快速切换文件的过程中，有极高的概率会卡住。遇到这个问题我是这么解决的。</p>
+<p>关闭文件预览修改rc.conf set preview_files false 这样基本就没有卡住的情况了<br>
+如果不想关闭文件预览，我就不太想关，感觉有时还是挺实用的，如果遇到卡住不能动可以按 Ctrl - C 即可解除卡住的情况。<br>
+可以按W查看运行日志，知道为什么会卡，按w显示当前的任务列表。<br>
+仅预览2MB以下的文件，降低卡住概率</p>
+<p>目前我发现卡住基本是因为预览大文件导致的，预览大文件（10MB以上的文体之类）在没有预览完成时，不停的j k 浏览文件，这样就会卡住。<br>
+修改rc.conf</p>
+<h1 id="只预览2mb以内的文件">只预览2MB以内的文件</h1>
+<p>set preview_max_size 2048000</p>
+<p>经过这个设置后，我发现卡住的概率极大的减少。如果遇到大于2MB需要预览可以手动按i。</p>
+<p>配置优化</p>
+<p>修改配色风格</p>
+<p>default, jungle, snow, solarized四种可选</p>
+<h1 id="default-jungle-snow-solarized">default, jungle, snow, solarized</h1>
+<p>set colorscheme jungle</p>
+<p>显示行号</p>
+<p>用习惯vim的我，还是喜欢有行号的，可以 行号j k快速跳转</p>
+<h1 id="possible-values-false-absolute-relative">Possible values: false, absolute, relative.</h1>
+<p>set line_numbers relative<br>
+1<br>
+2<br>
+行号默认是从0开始的，设置成从1开始</p>
+<h1 id="start-line-numbers-from-1-instead-of-0">Start line numbers from 1 instead of 0</h1>
+<p>set one_indexed true<br>
+1<br>
+2<br>
+没预览时不折叠预览区</p>
+<p>因为我设置了只预览2MB以下的文件，如果遇到大文件不预览。默认情况下窗口会自动变大，看起来不舒服，那就把它关掉吧！</p>
+<h1 id="没有文件预览时是否折叠右侧窗口">没有文件预览时，是否折叠右侧窗口</h1>
+<p>set collapse_preview false</p>
+<p>强制在root中开启文件预览</p>
+<p>可能是为了安全考虑，ranger默认在root用户中不启动预览功能。如何在root用户中也开启预览呢？<br>
+我在这里找到了解决办法：https://bbs.archlinux.org/viewtopic.php?id=183674</p>
+<p>具体操作如下：<br>
+ranger按gR 进入ranger安装目录，找到ranger/core/main.py<br>
+<img src="https://leeyefei.github.io/post-images/1660510443961.png" alt="" loading="lazy"></p>
+<p>找到Running as root, disabling the file previews.<br>
+<img src="https://leeyefei.github.io/post-images/1660510455469.png" alt="" loading="lazy"><br>
+这样操作完成后，发现在ROOT下面也可以正常预览文件了。</p>
+<p>iterm2中alt+数字 无效</p>
+<p>在iterm2中使用alt+数字创建tab页面无效，设置了set xterm_alt_key true依然无效。<br>
+最终解决办法：<br>
+<img src="https://leeyefei.github.io/post-images/1660510484836.png" alt="" loading="lazy"></p>
+<p>退出ranger保留路径方法一</p>
+<p>环境变量（如：~/.zshrc）中加入如下的函数。</p>
+<h1 id="ranger-自动进入目录">ranger 自动进入目录</h1>
+<p>function ranger-cd {<br>
+# 创建一个临时文件并存储<br>
+tempfile=&quot;<span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;EOF&#039;, got &#039;#&#039; at position 26: … tmp.XXXXXX)&quot;
+	#̲ 运行ranger并要求其将最…'>(mktemp -t tmp.XXXXXX)&quot;
+	# 运行ranger并要求其将最后一条路径输出到临时文件
+    ranger --choosedir=&quot;</span>tempfile&quot; &quot;<span class='katex-error' title='ParseError: KaTeX parse error: Expected &#039;}&#039;, got &#039;EOF&#039; at end of input: {@:-'>{@:-</span>(pwd)}&quot;</p>
+<pre><code># 如果临时文件存在，则读取并且临时文件的内容不等于当前路径
+test -f &quot;$tempfile&quot; &amp;&amp;
+if [ &quot;$(cat -- &quot;$tempfile&quot;)&quot; != &quot;$(echo -n `pwd`)&quot; ]; then
+	# 将目录更改为临时文件中的路径
+    cd -- &quot;$(cat &quot;$tempfile&quot;)&quot;
+fi
+# 这行删除临时文件不是非常必要，因为Linux应该在下次启动时处理它
+rm -f -- &quot;$tempfile&quot;
+</code></pre>
+<p>}</p>
+<p>alias rcd=ranger-cd</p>
+<p>下次使用rcd运行ranger,退出ranger后会自动cd 进ranger浏览的目录。</p>
+<p>退出ranger保留路径方法二(推荐)</p>
+<p>环境变量（如：~/.zshrc），加入下面一行。</p>
+<p>alias nav='ranger --choosedir=$HOME/.rangerdir; LASTDIR=<code>cat $HOME/.rangerdir</code>; cd &quot;$LASTDIR&quot;'<br>
+1<br>
+下次使用nav运行ranger,退出ranger后会自动cd 进ranger浏览的目录。</p>
+<p>这种方法更简单明了，推荐使用。</p>
+<p>使用体验总结</p>
+<p>archlinux中使用目前没有遇到过卡顿的情况，但是在macOS中多次遇到卡死的情况。应该主要跟预览有关吧。</p>
+<p>如果不小心点到gif图片会卡死，界面无法操作，要等一会儿才可以。<br>
+在macOS中使用ranger打开视频文本时也遇到过卡死的情况。<br>
+关闭图片预览功能就可以解决了，这个bug有可能是跟iterm2的图片预览功能有关吧。</p>
+<p>快捷键解释</p>
+<p>快捷键	说明<br>
+Q	全部退出<br>
+q	退出<br>
+ZZ	退出<br>
+ZQ	退出<br>
+R	刷新reload_cwd<br>
+F	冻结文件（只读模式）<br>
+<c-r>	重置reset<br>
+<c-l>	重新渲染窗口<br>
+<c-c>	abort<br>
+<escape>	change_mode normal<br>
+~	set viewmode!<br>
+i	display_file<br>
+<alt>j	scroll_preview 1<br>
+<alt>k	scroll_preview -1<br>
+<alt><code>&lt;right&gt;	tab_move 1 &lt;alt&gt;</code><left>	tab_move -1<br>
+<alt>1	打开标签页1<br>
+<alt>2	打开标签页 2<br>
+<alt>3	tab_open 3<br>
+<alt>4	tab_open 4<br>
+<alt>5	tab_open 5<br>
+<alt>6	tab_open 6<br>
+<alt>7	tab_open 7<br>
+<alt>8	tab_open 8<br>
+<alt>9	tab_open 9<br>
+<alt>r	tab_shift 1<br>
+<alt>l	tab_shift -1<br>
+?	help<br>
+W	查看运行日志<br>
+w	taskview_open<br>
+S	打开命令行shell $SHELL<br>
+:	console<br>
+;	console<br>
+!	console shell%space<br>
+@	console -p6 shell %%s</p>
+<h1 id="console-shell-pspace">console shell -p%space</h1>
+<p>s	console shell%space<br>
+r	chain draw_possible_programs; console open_with%space<br>
+f	console find%space<br>
+cd	console cd%space<br>
+cw	重命名console rename%space<br>
+ct	search_next order=tag<br>
+cs	按文件大小排序search_next order=size<br>
+ci	按文件类型排序search_next order=mimetype<br>
+cc	按创建时间排序search_next order=ctime<br>
+cm	按修改时间排序search_next order=mtime<br>
+ca	search_next order=atime<br>
+<c-p>	查命令历史chain console; eval fm.ui.console.history_move(-1)<br>
+Mf	显示文件名称linemode filename<br>
+Mi	linemode fileinfo<br>
+Mm	显示时间linemode mtime<br>
+Mh	linemode humanreadablemtime<br>
+Mp	linemode permissions<br>
+Ms	linemode sizemtime<br>
+MH	linemode sizehumanreadablemtime<br>
+Mt	linemode metatitle<br>
+t	tag_toggle<br>
+ut	tag_remove<br>
+uv	取消选择mark_files all=True val=False<br>
+uV	反选toggle_visual_mode reverse=True<br>
+ud	uncut<br>
+uy	uncut<br>
+uq	tab_restore<br>
+um<any>	unset_bookmark %any<br>
+um<bg>	draw_bookmarks<br>
+&quot;<any>	tag_toggle tag=%any<br>
+<space>	mark_files toggle=True<br>
+v	全选或反选mark_files all=True toggle=True<br>
+V	选择模式toggle_visual_mode<br>
+<f1>	help<br>
+<f2>	rename_append<br>
+<f3>	display_file<br>
+<f4>	edit<br>
+<f5>	copy<br>
+<f6>	cut<br>
+<f7>	console mkdir%space<br>
+<f8>	console delete<br>
+<f10>	exit<br>
+<up>	move up=1<br>
+<down>	move down=1<br>
+<left>	move left=1<br>
+<right>	move right=1<br>
+<home>	move to=0<br>
+<end>	move to=-1<br>
+<pagedown>	move down=1 pages=True<br>
+<pageup>	move up=1 pages=True<br>
+<c-j>	move right=1<br>
+<insert>	console touch%space<br>
+k	move up=1<br>
+j	move down=1<br>
+h	move left=1<br>
+l	move right=1<br>
+gg	move to=0<br>
+gh	cd ~<br>
+ge	cd /etc<br>
+gu	cd /usr<br>
+gd	cd /dev<br>
+gl	cd -r .<br>
+gL	cd -r %f<br>
+go	cd /opt<br>
+gv	cd /var<br>
+gm	cd /media<br>
+gi	eval fm.cd(’/run/media/’ + os.getenv(‘USER’))<br>
+gM	cd /mnt<br>
+gs	cd /srv<br>
+gp	cd /tmp<br>
+gr	cd /<br>
+gR	eval fm.cd(ranger.RANGERDIR)<br>
+g/	cd /<br>
+g?	cd /usr/share/doc/ranger<br>
+gt	tab_move 1<br>
+gT	tab_move -1<br>
+gn	tab_new<br>
+gc	tab_close<br>
+G	move to=-1<br>
+<c-f>	move down=1 pages=True<br>
+<c-b>	move up=1 pages=True<br>
+J	move down=0.5 pages=True<br>
+K	move up=0.5 pages=True<br>
+<c-d>	move down=0.5 pages=True<br>
+<c-u>	move up=0.5 pages=True<br>
+H	history_go -1<br>
+L	history_go 1<br>
+]	move_parent 1<br>
+[	move_parent -1<br>
+}	traverse<br>
+{	traverse_backwards<br>
+)	jump_non<br>
+E	edit<br>
+du	shell -p du --max-depth=1 -h --apparent-size<br>
+dU	shell -p du --max-depth=1 -h --apparent-size | sort -rh<br>
+dD	console delete<br>
+dT	console trash<br>
+dd	cut<br>
+da	cut mode=add<br>
+dr	cut mode=remove<br>
+dt	cut mode=toggle<br>
+dgg	eval fm.cut(dirarg=dict(to=0), narg=quantifier)<br>
+dG	eval fm.cut(dirarg=dict(to=-1), narg=quantifier)<br>
+dj	eval fm.cut(dirarg=dict(down=1), narg=quantifier)<br>
+dk	eval fm.cut(dirarg=dict(up=1), narg=quantifier)<br>
+dc	get_cumulative_size<br>
+yp	复制文件全路径<br>
+yd	复制文件目录路径<br>
+yn	复制文件名<br>
+y.	复制文件名不包含扩展名<br>
+yy	复制文件<br>
+ya	copy mode=add<br>
+yr	copy mode=remove<br>
+yt	copy mode=toggle<br>
+ygg	eval fm.copy(dirarg=dict(to=0), narg=quantifier)<br>
+yG	eval fm.copy(dirarg=dict(to=-1), narg=quantifier)<br>
+yj	eval fm.copy(dirarg=dict(down=1), narg=quantifier)<br>
+yk	eval fm.copy(dirarg=dict(up=1), narg=quantifier)<br>
+=	chmod<br>
+a	rename_append<br>
+A	eval fm.open_console('rename ’ + fm.thisfile.relative_path.replace(&quot;%&quot;, “%%”))<br>
+I	eval fm.open_console('rename ’ + fm.thisfile.relative_path.replace(&quot;%&quot;, “%%”), position=7)<br>
+pp	粘贴<br>
+po	粘贴 强制覆盖<br>
+pP	paste append=True<br>
+pO	paste overwrite=True append=True<br>
+pl	粘贴软链接paste_symlink relative=False<br>
+pL	paste_symlink relative=True<br>
+phl	paste_hardlink<br>
+pht	paste_hardlinked_subtree<br>
+pd	console paste dest=<br>
+p <any>	paste dest=%any_path<br>
+p' <any>	paste dest=%any_path<br>
+/	console search%space<br>
+n	search_next<br>
+N	search_next forward=False<br>
+<c-n>	tab_new<br>
+<c-w>	tab_close<br>
+<c-i>	向右切换tab页面与gt功能一样 tab_move 1<br>
+<s-tab>	向左切换tab页面与gT功能一样 tab_move -1<br>
+or	反转排序set sort_reverse!<br>
+oz	set sort=random<br>
+os	根据文件大小排序 chain set sort=size; set sort_reverse=False<br>
+ob	根据文件名称排序 chain set sort=basename; set sort_reverse=False<br>
+on	chain set sort=natural; set sort_reverse=False<br>
+om	根据修改时间排序chain set sort=mtime; set sort_reverse=False<br>
+oc	chain set sort=ctime; set sort_reverse=False<br>
+oa	chain set sort=atime; set sort_reverse=False<br>
+ot	chain set sort=type; set sort_reverse=False<br>
+oe	chain set sort=extension; set sort_reverse=False<br>
+oS	chain set sort=size; set sort_reverse=True<br>
+oB	chain set sort=basename; set sort_reverse=True<br>
+oN	chain set sort=natural; set sort_reverse=True<br>
+oM	chain set sort=mtime; set sort_reverse=True<br>
+oC	chain set sort=ctime; set sort_reverse=True<br>
+oA	chain set sort=atime; set sort_reverse=True<br>
+oT	chain set sort=type; set sort_reverse=True<br>
+oE	根据扩展名排序 chain set sort=extension; set sort_reverse=True<br>
+zc	set collapse_preview!<br>
+zd	切换目录是否排在文件前面set sort_directories_first!<br>
+zh	set show_hidden!<br>
+zI	set flushinput!<br>
+zi	切换是否预览图片set preview_images!<br>
+zm	切换是否允许鼠标set mouse_enabled!<br>
+zp	切换是否预览文件set preview_files!<br>
+zP	切换是否预览目录set preview_directories!<br>
+zs	set sort_case_insensitive!<br>
+zu	set autoupdate_cumulative_size!<br>
+zv	set use_preview_script!<br>
+zf	过滤文件console filter%space<br>
+zz	过滤文件console filter%space<br>
+<c-h>	切换是否显示隐藏set show_hidden!<br>
+<backspace>	切换是否显示隐藏set show_hidden!<br>
+<backspace2>	切换是否显示隐藏set show_hidden!<br>
+.d	只显示目录filter_stack add type d<br>
+.f	只显示文件filter_stack add type f<br>
+.l	filter_stack add type l<br>
+.m	console filter_stack add mime%space<br>
+.n	console filter_stack add name%space<br>
+.#	console filter_stack add hash%space<br>
+.&quot;	filter_stack add duplicate<br>
+.’	filter_stack add unique<br>
+.|	filter_stack add or<br>
+.&amp;	filter_stack add and<br>
+.!	filter_stack add not<br>
+.r	filter_stack rotate<br>
+.c	filter_stack clear<br>
+.*	filter_stack decompose<br>
+.p	filter_stack pop<br>
+…	filter_stack show</p>
+<pre><code class="language-enter_bookmark">```	draw_bookmarks
+’&lt;any&gt;	enter_bookmark %any
+’&lt;bg&gt;	draw_bookmarks
+m&lt;any&gt;	set_bookmark %any
+m&lt;bg&gt;	draw_bookmarks
++ur	shell -f chmod u+r %s
++uw	shell -f chmod u+w %s
++ux	shell -f chmod u+x %s
++uX	shell -f chmod u+X %s
++us	shell -f chmod u+s %s
++ut	shell -f chmod u+t %s
++gr	shell -f chmod g+r %s
++gw	shell -f chmod g+w %s
++gx	shell -f chmod g+x %s
++gX	shell -f chmod g+X %s
++gs	shell -f chmod g+s %s
++gt	shell -f chmod g+t %s
++or	shell -f chmod o+r %s
++ow	shell -f chmod o+w %s
++ox	shell -f chmod o+x %s
++oX	shell -f chmod o+X %s
++os	shell -f chmod o+s %s
++ot	shell -f chmod o+t %s
++ar	shell -f chmod a+r %s
++aw	shell -f chmod a+w %s
++ax	shell -f chmod a+x %s
++aX	shell -f chmod a+X %s
++as	shell -f chmod a+s %s
++at	shell -f chmod a+t %s
++r	shell -f chmod u+r %s
++w	shell -f chmod u+w %s
++x	shell -f chmod u+x %s
++X	shell -f chmod u+X %s
++s	shell -f chmod u+s %s
++t	shell -f chmod u+t %s
+-ur	shell -f chmod u-r %s
+-uw	shell -f chmod u-w %s
+-ux	shell -f chmod u-x %s
+-uX	shell -f chmod u-X %s
+-us	shell -f chmod u-s %s
+-ut	shell -f chmod u-t %s
+-gr	shell -f chmod g-r %s
+-gw	shell -f chmod g-w %s
+-gx	shell -f chmod g-x %s
+-gX	shell -f chmod g-X %s
+-gs	shell -f chmod g-s %s
+-gt	shell -f chmod g-t %s
+-or	shell -f chmod o-r %s
+-ow	shell -f chmod o-w %s
+-ox	shell -f chmod o-x %s
+-oX	shell -f chmod o-X %s
+-os	shell -f chmod o-s %s
+-ot	shell -f chmod o-t %s
+-ar	shell -f chmod a-r %s
+-aw	shell -f chmod a-w %s
+-ax	shell -f chmod a-x %s
+-aX	shell -f chmod a-X %s
+-as	shell -f chmod a-s %s
+-at	shell -f chmod a-t %s
+-r	shell -f chmod u-r %s
+-w	shell -f chmod u-w %s
+-x	shell -f chmod u-x %s
+-X	shell -f chmod u-X %s
+-s	shell -f chmod u-s %s
+-t	shell -f chmod u-t %s
+Keybindings	in `console’
+&lt;c-i&gt;	eval fm.ui.console.tab()
+&lt;s-tab&gt;	eval fm.ui.console.tab(-1)
+&lt;escape&gt;	eval fm.ui.console.close()
+&lt;c-j&gt;	eval fm.ui.console.execute()
+&lt;c-l&gt;	redraw_window
+&lt;c-c&gt;	eval fm.ui.console.close()
+&lt;up&gt;	eval fm.ui.console.history_move(-1)
+&lt;down&gt;	eval fm.ui.console.history_move(1)
+&lt;left&gt;	eval fm.ui.console.move(left=1)
+&lt;right&gt;	eval fm.ui.console.move(right=1)
+&lt;home&gt;	eval fm.ui.console.move(right=0, absolute=True)
+&lt;end&gt;	eval fm.ui.console.move(right=-1, absolute=True)
+&lt;alt&gt;b	eval fm.ui.console.move_word(left=1)
+&lt;alt&gt;f	eval fm.ui.console.move_word(right=1)
+&lt;alt&gt;``&lt;left&gt;	eval fm.ui.console.move_word(left=1)
+alt&gt;```	eval fm.ui.console.move_word(right=1)
+&lt;alt&gt;d	eval fm.ui.console.delete_word(backward=False)
+&lt;backspace&gt;	eval fm.ui.console.delete(-1)
+&lt;delete&gt;	eval fm.ui.console.delete(0)
+&lt;c-w&gt;	eval fm.ui.console.delete_word()
+&lt;c-k&gt;	eval fm.ui.console.delete_rest(1)
+&lt;c-u&gt;	eval fm.ui.console.delete_rest(-1)
+&lt;c-y&gt;	eval fm.ui.console.paste()
+&lt;c-g&gt;	eval fm.ui.console.close()
+&lt;c-p&gt;	eval fm.ui.console.history_move(-1)
+&lt;c-n&gt;	eval fm.ui.console.history_move(1)
+&lt;c-b&gt;	eval fm.ui.console.move(left=1)
+&lt;c-f&gt;	eval fm.ui.console.move(right=1)
+&lt;c-a&gt;	eval fm.ui.console.move(right=0, absolute=True)
+&lt;c-e&gt;	eval fm.ui.console.move(right=-1, absolute=True)
+&lt;c-d&gt;	eval fm.ui.console.delete(0)
+&lt;c-h&gt;	eval fm.ui.console.delete(-1)
+backspace2&gt;`	eval fm.ui.console.delete(-1)
+allow_quantifiers&gt;`	false
+Keybindings	in `pager’
+&lt;down&gt;	pager_move down=1
+&lt;up&gt;	pager_move up=1
+&lt;left&gt;	pager_move left=4
+&lt;right&gt;	pager_move right=4
+&lt;home&gt;	pager_move to=0
+&lt;end&gt;	pager_move to=-1
+&lt;pagedown&gt;	pager_move down=1.0 pages=True
+&lt;pageup&gt;	pager_move up=1.0 pages=True
+&lt;c-d&gt;	pager_move down=0.5 pages=True
+&lt;c-u&gt;	pager_move up=0.5 pages=True
+k	pager_move up=1
+&lt;c-p&gt;	pager_move up=1
+j	pager_move down=1
+&lt;c-n&gt;	pager_move down=1
+&lt;c-j&gt;	pager_move down=1
+h	pager_move left=4
+l	pager_move right=4
+g	pager_move to=0
+G	pager_move to=-1
+d	pager_move down=0.5 pages=True
+u	pager_move up=0.5 pages=True
+n	pager_move down=1.0 pages=True
+f	pager_move down=1.0 pages=True
+&lt;c-f&gt;	pager_move down=1.0 pages=True
+&lt;space&gt;	pager_move down=1.0 pages=True
+p	pager_move up=1.0 pages=True
+b	pager_move up=1.0 pages=True
+&lt;c-b&gt;	pager_move up=1.0 pages=True
+&lt;c-l&gt;	redraw_window
+&lt;escape&gt;	pager_close
+q	pager_close
+Q	pager_close
+i	pager_close
+&lt;f3&gt;	pager_close
+E	edit_file
+Keybindings	in `taskview’
+&lt;up&gt;	taskview_move up=1
+&lt;down&gt;	taskview_move down=1
+&lt;home&gt;	taskview_move to=0
+&lt;end&gt;	taskview_move to=-1
+&lt;pagedown&gt;	eval -q fm.ui.taskview.task_move(-1)
+&lt;pageup&gt;	eval -q fm.ui.taskview.task_move(0)
+&lt;c-d&gt;	taskview_move down=0.5 pages=True
+&lt;c-u&gt;	taskview_move up=0.5 pages=True
+k	taskview_move up=1
+&lt;c-p&gt;	taskview_move up=1
+j	taskview_move down=1
+&lt;c-n&gt;	taskview_move down=1
+&lt;c-j&gt;	taskview_move down=1
+g	taskview_move to=0
+G	taskview_move to=-1
+u	taskview_move up=0.5 pages=True
+n	taskview_move down=1.0 pages=True
+f	taskview_move down=1.0 pages=True
+&lt;c-f&gt;	taskview_move down=1.0 pages=True
+&lt;space&gt;	taskview_move down=1.0 pages=True
+p	taskview_move up=1.0 pages=True
+b	taskview_move up=1.0 pages=True
+&lt;c-b&gt;	taskview_move up=1.0 pages=True
+J	eval -q fm.ui.taskview.task_move(-1)
+K	eval -q fm.ui.taskview.task_move(0)
+dd	eval -q fm.ui.taskview.task_remove()
+&lt;delete&gt;	eval -q fm.ui.taskview.task_remove()
+&lt;c-l&gt;	redraw_window
+&lt;escape&gt;	taskview_close
+q	taskview_close
+Q	taskview_close
+w	taskview_close
+&lt;c-c&gt;	taskview_close
+参考
+
+《RANGER IMAGE PREVIEW ON OSX WITH ITERM2》
+https://www.everythingcli.org/ranger-image-preview-on-osx-with-iterm2/
+《File icons for the Ranger file manager》https://github.com/alexanderjeurissen/ranger_devicons
+《Add filetype glyphs (icons) 》https://github.com/ranger/ranger/issues/298
+《osx can’t use alt- to switch tab》https://github.com/ranger/ranger/issues/420
+《如何退出Ranger文件浏览器回到命令提示符，但保留当前目录？》
+https://qastack.cn/superuser/1043806/how-to-exit-the-ranger-file-explorer-back-to-command-prompt-but-keep-the-current-directory
+
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://leeyefei.github.io/tag/VpJHGbxEh/" class="tag">
+                    终端
+                  </a>
+                
+                  <a href="https://leeyefei.github.io/tag/D1T8jA57d/" class="tag">
+                    linux
+                  </a>
+                
+                  <a href="https://leeyefei.github.io/tag/X47LkC6en/" class="tag">
+                    mac
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://leeyefei.github.io/post/xin-xi-xue-ao-sai-xue-xi-bi-bei-wang-zhan/">
+                  <h3 class="post-title">
+                    信息学奥赛学习必备网站
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'leeyefei.github.io',
+        owner: 'leeyefei',
+        admin: ['leeyefei'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>命令行音乐播放器cmus和聊天室irssi | 日照骑行者</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://leeyefei.github.io/favicon.ico?v=1661091407159">
+<link rel="stylesheet" href="https://leeyefei.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="cmus 命令行播放器使用
+ 安装
+Brew install cmus
+
+启动
+cmus
+设置输出
+:set output_plugin=pulse
+导入本地音乐
+:add /Users/leeyefei/Music
+查看说明
+man cm..." />
+    <meta name="keywords" content="linux,mac" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://leeyefei.github.io">
+        <img src="https://leeyefei.github.io/images/avatar.png?v=1661091407159" class="site-logo">
+        <h1 class="site-title">日照骑行者</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://leeyefei.github.io" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/leeyefei" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个爱好骑行的科技粉
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://leeyefei.github.io" target="_blank">leeyefei</a> | <a class="rss" href="https://leeyefei.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">命令行音乐播放器cmus和聊天室irssi</h2>
+            <div class="post-date">2022-08-14</div>
+            
+              <div class="feature-container" style="background-image: url('https://leeyefei.github.io/post-images/ming-ling-xing-yin-le-bo-fang-qi-cmus-he-liao-tian-shi-irssi.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>cmus 命令行播放器使用<br>
+ 安装<br>
+Brew install cmus</p>
+<!-- more -->
+<p>启动<br>
+cmus<br>
+设置输出<br>
+:set output_plugin=pulse</p>
+<p>导入本地音乐<br>
+:add /Users/leeyefei/Music<br>
+查看说明<br>
+man cmus<br>
+播放<br>
+　　选中，使用 Enter 播放，z上 一首，b 下一首，c 暂停，x 播放，v 停止<br>
+菜单查看模式<br>
+输入 1: 普通模式<br>
+输入2: 简单模式<br>
+输入3: 列表模式<br>
+输入4: 队列模式<br>
+　　e 添加到队列菜单<br>
+　　y 添加到列表菜单1<br>
+常用组合键<br>
+　　Ctrl + R 切换单曲循环<br>
+　　Ctrl + I 切换左右菜单<br>
+　　H J K L 快退 上 下 快进<br>
+播放模式切换<br>
+s 随机播放<br>
+f 顺序播放<br>
+r 循环播放<br>
+音量调节<br>
+　　- =<br>
+删除选项<br>
+　　Ctrl + D<br>
+更新缓存<br>
+　　u<br>
+刷新<br>
+　　Ctrl + L<br>
+ <br>
+macos安装<br>
+brew install cmus<br>
+brew insatll irssi</p>
+<p>debian linux安装<br>
+apt install cmus<br>
+apt install irssi</p>
+<p>CMUS使用<br>
+数字1~7可以切换界面<br>
+添加歌曲<br>
+在任一界面，输入&quot;:add 文件名或目录名&quot;，则会将对应的歌曲文件或目录中的所有歌曲文件全部添加到库中。<br>
+<img src="https://leeyefei.github.io/post-images/1660480761642.jpg" alt="" loading="lazy"></p>
+<p>IRSSI使用</p>
+<pre><code>•	运行程序
+</code></pre>
+<p>$ irssi<br>
+手动连接<br>
+•	连接服务器<br>
+/connect irc.libera.chat<br>
+•	加入頻道<br>
+/join #linuxba<br>
+主要中文频道<br>
+#wikipedia-zh<br>
+#archlinux-cn<br>
+#archlinux-cn-offtopic #c_lang_cn<br>
+#ubuntu-cn</p>
+<p>外文的<br>
+##C++ c++语言律师大多在这里，仅讨论与c++语言，较 pedantic<br>
+##C++-general 可以讨论c++周边技术的地方，这2个频道都有委员会成员。<br>
+#anime虽然我没去过，不过听说不仅仅可以讨论动漫，还可以讨论技术？</p>
+<p>自动连接<br>
+•	添加网络<br>
+/network add -nick leeyefei Libera<br>
+•	添加服务器<br>
+/server add -auto -network Libera irc.libera.chat<br>
+添加想要自动加入的频道<br>
+/channel add -auto #linuxba Libera<br>
+下次启动时，就会自动连接Libera，并分别加入其中的linuxba频道。使用Alt+数字键切换。</p>
+<p>操作<br>
+•	使用Alt+数字键，可在不同频道间切换<br>
+Alt+1返回主界面<br>
+Alt+2返回#archlinux<br>
+命令<br>
+/wc<br>
+離開頻道,返回主畫面<br>
+/quit<br>
+退出<br>
+/channel list<br>
+显示保存的频道<br>
+/server list<br>
+显示保存的服务器<br>
+/network list<br>
+显示保存的网络<br>
+技巧<br>
+保存聊天记录<br>
+/SET autolog ON<br>
+/SET autolog_path /var/log/irclogs/$tag/$0.log<br>
+/save</p>
+<p>IRSSI好用配置<br>
+vi ~/.irssi/config<br>
+<img src="https://leeyefei.github.io/post-images/1660480794092.jpg" alt="" loading="lazy"></p>
+<p>中科大频道#ustc_lug<br>
+中文维基百科#wikipedia-zh<br>
+#ubuntu-cn<br>
+#archlinux-cn<br>
+#csdn-code</p>
+<p>1）注册账户：<br>
+IRC可以不注册就使用。但一旦出现重名，那么该帐号的所有者也登陆时，你就会被踢下线，所以我们如果有时间，还是拥有自己的帐号比较好。<br>
+注册方式：<br>
+1、登陆你要注册的昵称，注意看是不是昵称已经存在或被注册，昵称不要使用某组织、项目或其他特定名称以免产生冲突。<br>
+2、/msg NickServ REGISTER 昵称 你的密码 你的邮箱<br>
+3、确认邮箱<br>
+4、配置客户端自动验证，最简单的办法时设置服务器密码为 用户名:密码</p>
+<p>2）隐藏IP：<br>
+登录后，你会发现IP是直接显示出来的，暴露IP有时候较危险，你需要IP cloak掩藏IP。<br>
+先验证登录已注册用户，然后/join #freenode，直接发信息请求ip cloak（用英文），请求方式随意，只要表明想要cloak就行，然后等待管理员处理。</p>
+<p>3）常用命令说明（可以在任意聊天窗口使用，使用图形客户端一般用不到）：<br>
+/msg ChanServ Register #channel password    频道注册<br>
+/msg nickserv identify password     认证当前账号<br>
+/msg nickserv identify 账户  密码     认证另一个账号<br>
+/nick &lt;昵称&gt; #更改昵称<br>
+/whois &lt;昵称&gt; #查看他人信息<br>
+/ignore &lt;昵称&gt; #忽略某人聊天内容<br>
+/list #频道列表<br>
+/join #加入频道<br>
+/part [channels] [message] #退出频道，不加频道名退出当前频道，后面可以跟退出原因<br>
+/me #关于自己的信息<br>
+/query 昵称|#频道  （/say &lt;昵称&gt; ）   和别人开小窗单独聊天<br>
+/msg &lt;昵称&gt;     给某人发私信<br>
+/SET autolog ON    自动保存irc log</p>
+<p>4） 服务端命令(Services)<br>
+服务端分为ChanServ(频道服务), NickServ(昵称服务) 和 MemoServ(留言服务)三类。<br>
+/msg chanserv #频道服务<br>
+/msg chanserv help #获得频道服务帮助信息<br>
+/msg nickserv #昵称服务<br>
+/msg nickserv help #获得昵称服务帮助信息<br>
+/msg memoserv #留言服务<br>
+/msg memoserv help #获得留言服务帮助信息<br>
+————————————————<br>
+版权声明：本文为CSDN博主「西域火龙油」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>
+原文链接：https://blog.csdn.net/u012439646/article/details/78279143</p>
+<ol>
+<li>IRC简介<br>
+https://zh.wikipedia.org/wiki/IRC<br>
+https://en.wikipedia.org/wiki/Internet_Relay_Chat<br>
+芬兰人雅尔可·欧伊卡利宁（Jarkko Oikarinen）于1988年8月创造了IRC来取代一个叫做MUT的程序。<br>
+•	IRC（Internet Relay Chat的缩写，“因特网中继聊天”）是一个位于应用层的协议。<br>
+•	其主要用于群体聊天，但同样也可以用于个人对个人的聊天。<br>
+•	一个IRC服务器可以连接其他的IRC服务器以扩展为一个IRC网络。<br>
+•	IRC 不强制注册；但如果你注册了，就可以强制把占用自己唯一 ID 的人踢下线。<br>
+•	IRC 协议简单，开源实现多，其第三方机器人程序非常众多，几乎每种语言都有一个实现。<br>
+•	IRC 是开源社区会议标准；因此，许多开源世界的技术大牛混在那里。</li>
+<li>IRC服务器<br>
+IRC是一个分布式的客户端/服务器结构。通过连接到一个IRC服务器，我们可以访问这个服务器以及它所连接的其他服务器上的频道。<br>
+要使用IRC，必须先登录到一个IRC服务器上，最常见的为irc.freenode.net。<br>
+https://freenode.net/ - 最大的IRC网络，为免费和开源软件社区，非营利组织和相关社区提供讨论设施。<br>
+https://freenode.net/kb/answer/usermodes - 关于用户模式的Freenode文章<br>
+IRC使用的服务器端口有:<br>
+•	6667（明文传输，如irc://irc.freenode.net）、<br>
+•	6697（SSL加密传输，如ircs://irc.freenode.net:6697）等。<br>
+https://en.wikipedia.org/wiki/Comparison_of_Internet_Relay_Chat_daemons<br>
+Internet Relay Chat守护程序的比较</li>
+</ol>
+<p>https://en.wikipedia.org/wiki/IRCd<br>
+IRCD: 简称互联网中继聊天守护，是服务器软件实现了IRC 协议，使人们通过交谈彼此上网（交换文本即时消息）。它不同于连接出站到IRC频道的IRC机器人。<br>
+3. IRC频道(图表)<br>
+频道存在于一个IRC服务器上。一个频道类似于一个聊天室，频道名称必须以#符号开始，例如#irchelp。</p>
+<p>https://zh.wikipedia.org/wiki/Wikipedia:IRC聊天频道<br>
+Freenode上的维基相关频道包括但不限于：<br>
+#mediawiki - 和MediaWiki软件有关的讨论和技术问题<br>
+#wikibooks - 维基教科书<br>
+#wikimedia - 维基媒体基金会<br>
+#wikimedia-commons - 维基共享<br>
+#wikivoyage-zh - 中文维基导游<br>
+#wikinews - 维基新闻<br>
+#wikinews-zh - 中文维基新闻<br>
+#wikipedia - 中文维基百科<br>
+#wikipedia-zh - 中文维基百科<br>
+#wikipedia-zh-acg - 中文维基百科ACG频道</p>
+<pre><code>•	注册  注册你心爱的昵称，让大家都记得你 
+•			  在聊天栏输入 
+•			  $ /nick (昵称) 
+•			  $ /msg nickserv register (密码) (邮箱地址) 
+•			  然后打开邮箱收信，单击激活链接即可。 
+•			  下次登录时便可使用如下命令完成验证:$ /msg nickserv identify (密码) 
+</code></pre>
+<p>IRSSI使用</p>
+<pre><code>•			  irssi -c irc.freenode.net port 7000 登录 
+•			  /leave ,离开当前频道  
+•			  /msg &amp;lt;昵称&amp;gt; &amp;lt;消息&amp;gt;，向某人发私消息（新开窗口） 
+•			  &amp;nbsp;/query &amp;lt;昵称&amp;gt; &amp;lt;消息&amp;gt;，向某人发私消息（新开窗口且转换到这个窗口） 
+•			  &amp;nbsp;/say &amp;lt;昵称&amp;gt; &amp;lt;消息&amp;gt;，向某人说话（不新开窗口） 
+•			  &amp;nbsp;/notice &amp;lt;昵称&amp;gt; &amp;lt;消息&amp;gt;，向指定人发出注意消息  
+•			  /me &amp;lt;动作&amp;gt;，在当前聊天室窗口中做出动作。 如做出晕倒动作： 
+•			  /me 晕倒 
+•			  /away &amp;lt;原因&amp;gt;，留下信息说明暂时离开，别人向你发出私聊时将会返回此消息，再重新输入  
+•			  /away（不指定参数）则解除离开状态。  
+•			  /ignore &amp;lt;昵称&amp;gt;，忽略某人的聊天内容  
+•			  /set autolog on，自动保存聊天记录 
+•			  [Act:1,3,6,9,10] 这些数字提示各个频道上对话情况：灰白色表示有人登录或登出，白色代表在人在此channel上说话，灰红色代表对话中提起你的名字或呼叫你。  
+•			  Alt+1~0对应1~10的irc channel编号； Alt+q~p对应11~20的irc channel编号； Ctrl+n/p切换上/下一个irc channel; PageUP/PageDn切换上/下页讯息
+•			  (可选)一般频道都通过ChanServ这个机器人管理. 如下命令将ChanServ永久加入你的聊天室 /msg ChanServ SET &amp;lt;频道名&amp;gt; GUARD ON  
+•			  如果你所加入的频道有新的消息，那么频道号码会以高亮方式显示出来。这时可 以使用 /win 切换过去读新的消息。如果频道好码以红色高亮， 
+•			  说明有人在该频 道里提到了你的名字，这时你需要特别关注一下 
+•			  &amp;nbsp;表情&amp;nbsp; IRC 并不是真正支持发送什么表情，它只是提供一种专门用来做表情的命令 /me + 表情 。当你使用这个命令发送信息时， 
+•			  大部分客户端都会以缩进或高亮 的方式来消息。当你看到表情消息时，你只能脑补一下了。&amp;nbsp; 17:18&amp;nbsp; * jianingy is confused 
+•			  私聊&amp;nbsp; IRC 鼓励大家在公开频道聊天。任何问题的讨论对每一个在频道里的人都是透明 的。然而，你还是偶尔可能想跟某个人单独对话。 
+•			  这个时候可以使用 /query 命令。例如：你想要单独和 jianingy 聊两句&amp;nbsp; /query jianingy 
+•			   
+</code></pre>
+<p>中文活跃频道</p>
+<pre><code>•			  #archlinux-cn 
+•			  #linuxba 
+•			  #ubuntu-cn 
+</code></pre>
+<p>关于irssi中/window的操作:<br>
+要打开其他的channel先要新建一个窗口和容器，<br>
+/window new,然后再用/window stick 2 off, /window hide,就可以把的二个新建的window隐藏，让更多的window共用一个container.<br>
+使用ctrl+n,p或者是Alt+1,2就可以切换窗口.、</p>
+<p>一般在新建的window中使用<br>
+/connect irc.xxxx.net<br>
+/join #channels<br>
+就可以链接上一个新的channel了。</p>
+<p>第一次使用可以用下面的命令配置irssi<br>
+ <br>
+/network add -autosendcmd &quot;/^msg nickserv identify passwd;wait 2000&quot; OFTC<br>
+/server add -auto -network OFTC irc.oftc.net 6667<br>
+/channel add -auto #arch-cn  OFTC<br>
+ <br>
+ <br>
+这样就可以自动登录了，上面第一命令表明你已经向其服务器注册了帐号了！<br>
+ <br>
+ <br>
+至于帐号如何注册, 首先连接服务器，用/connect server-name</p>
+<ol>
+<li>/nick <name><br>
+选择一个没有重名的用户。（重名会有提示）</li>
+<li>/msg nickserv register <password> <e-mail><br>
+通过email认证后：</li>
+<li>/msg nickserv identify <password><br>
+使用log:<br>
+1.使用pgUP,pgDn键可以实现记录的翻页。<br>
+2./goto 12:00, /goto end<br>
+3./lastlog nickname 查看nickname所说的话！<br>
+4./away暂时离开，/away查看离开时段的聊天记录。<br>
+ <br>
+ <br>
+ <br>
+ <br>
+－－－－－－－－－－－－－<br>
+【日常操作】<br>
+(1) /nick &lt;昵称&gt; ，修改昵称<br>
+(2) /join #&lt;频道&gt; ，加入一个频道<br>
+(3) /wc，离开当前频道<br>
+(4) /part &lt;频道&gt; &lt;消息&gt;，退出频道，不加频道名退出当前频道，后面可以跟退出原因。<br>
+(5) /disconnect &lt;服务器&gt;，断开一个服务器<br>
+(6) /quit 或者 /exit，退出 irssi，结束IRC会话。<br>
+(7) /msg &lt;昵称&gt; &lt;消息&gt;，向某人发私消息（新开窗口）<br>
+(8) /query &lt;昵称&gt; &lt;消息&gt;，向某人发私消息（新开窗口且转换到这个窗口）<br>
+(9) /say &lt;昵称&gt; &lt;消息&gt;，向某人说话（不新开窗口）<br>
+(10) /notice &lt;昵称&gt; &lt;消息&gt;，向指定人发出注意消息<br>
+(11) /me &lt;动作&gt;，在当前聊天室窗口中做出动作。 如做出晕倒动作：/me 晕倒<br>
+(12) /away &lt;原因&gt;，留下信息说明暂时离开，别人向你发出私聊时将会返回此消息，再重新输入 /away（不指定参数）则解除离开状态。<br>
+(13) /ignore &lt;昵称&gt;，忽略某人的聊天内容<br>
+(14) /set autolog on，自动保存聊天记录</li>
+</ol>
+<p>【窗口操作】<br>
+(1) Alt+1<sub>0，对应1</sub>10的频道编号<br>
+(2) Alt+q<sub>p，对应11</sub>20的频道编号<br>
+(3) Ctrl+n/p，切换上/下一个频道<br>
+(4) PageUP/PageDn，切换上/下页讯息<br>
+(5) /window close，关闭当前窗口<br>
+(6) /window close &lt;数字&gt;，关闭指定编号的窗口<br>
+(7) /window list，窗口列表</p>
+<p>【查询信息】<br>
+(1) /list，频道列表<br>
+(2) /names [#聊天室]，列出当前服务器或指定聊天室下的所有人员名称（无法列出隐藏人员）<br>
+(3) /who，查看频道的所有人<br>
+(4) /whois [昵称]，查看某人的基本资料<br>
+(5) /ison &lt;别名1&gt; &lt;别名2&gt; ...查询指定别名是否在线<br>
+(6) /info，查询服务器信息<br>
+(7) /admin，查询当前服务器上的Admin<br>
+(8) /lusers，查询当前服务器上的统计信息<br>
+(9) /motd，查询当前服务器今日的统计信息<br>
+(10) /links，查询当前的服务器，解析当前的有几个服务器。</p>
+<p>【提示信息】<br>
+[Act: 1,3,6,9,10]：这些数字提示各个频道上对话情况：[灰白色] 表示有人登录或登出，[白色] 代表有人在此channel上说话，[灰红色] 代表对话中提起你的名字或呼叫你。</p>
+<p>【转换编码】<br>
+/recode add #&lt;频道&gt; &lt;编码&gt;，加入此频道编码格式<br>
+/recode，查看加入的编码列表</p>
+<p>IRSSI插件使用</p>
+<pre><code>•			  使用 Irssi 插件 
+•			  irssi的插件很方便,直接在 http://scripts.irssi.org/下载,然后放到~/.irssi/scripts下就可以了,然后在irssi中调用/script load调用插件(/run在新版本使用), 
+•			  如果想脚本自动调用的话就进入~/.irssi/scripts/autorun目录, 
+•			  然后ln -s ../yourscripts.pl 就可以了 
+•			 毫无疑问像 irssi 这么具有黑客范儿的程序一定是支持插件的。这些插件让 irssi 的功能更为全面、强大。 
+•			  你可以在 http://scripts.irssi.org 找到很 多有用的插件。 
+•			  加载插件的方法是：把插件文件下载到 ~/.irssi/scripts 里面，然后在 irssi 里执行命令：
+•			  /script load 插件名称 
+•			  如果你想让一个插件在 irssi 启动的时候就被自动加载，就做一个符号链接 把该插件链接到 ~/.irssi/scripts/autorun 这个目录里面。 
+</code></pre>
+<p>其他和插件相关的命令还有： 	  /script unload <br>
+•			  卸载一个插件。<br>
+•			 /script 	  列出当前加载的插件。   /script reset   卸载所有插件，并且重置插件的 Perl 解释器。  <br>
+•			  接下来介绍几个非常实用的插件：	  adv_windowlist <br>
+•			  下载地址： http://anti.teamidiot.de/static/nei/*/Code/Irssi/adv_windowlist.pl  默认的 window list 只能显示一行。用了这个插件后 window list 可以显示多 行。特别适合那些加入频道比较多的朋友。<br>
+•			  nickcolor <br>
+•			  下载地址：http://scripts.irssi.org/scripts/nickcolor.pl <br>
+•			  给频道里每个人的名字以不同颜色显示出来。方便你认清每一个人。 <br>
+•			  go  下载地址：http://scripts.irssi.org/scripts/go.pl <br>
+•			  使用 /win 命令切换窗口需要自己记住窗口号码和频道之间的关系。 go 让 我们可以直接使用频道名字切换窗口，并且还支持自动补齐功能。 <br>
+•			  trackbar 	  下载地址：http://scripts.irssi.org/scripts/trackbar.pl <br>
+•			  在你上次浏览内容下方画一道横线。如果你同时看多个频道的话，这个插件非常 有用。他能帮你了解该频道自你上次浏览后有哪些新内容。 <br>
+•			  queryresume   下载地址：http://scripts.irssi.org/scripts/queryresume.pl <br>
+•			 每次跟人私聊的时候先显示上次你俩聊天时的最后几行。</p>
+<p></p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://leeyefei.github.io/tag/D1T8jA57d/" class="tag">
+                    linux
+                  </a>
+                
+                  <a href="https://leeyefei.github.io/tag/X47LkC6en/" class="tag">
+                    mac
+                  </a>
+                
+              </div>
+            
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'leeyefei.github.io',
+        owner: 'leeyefei',
+        admin: ['leeyefei'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>

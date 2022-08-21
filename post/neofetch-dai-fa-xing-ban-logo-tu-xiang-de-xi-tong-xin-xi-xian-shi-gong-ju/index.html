@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Neofetch ：带发行版 Logo 图像的系统信息显示工具 | 日照骑行者</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://leeyefei.github.io/favicon.ico?v=1661091407159">
+<link rel="stylesheet" href="https://leeyefei.github.io/styles/main.css">
+
+
+  
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  
+
+  
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="Neofetch 是一个跨平台的易于使用的 系统信息显示命令行脚本[1]，它收集你的系统信息，并在终端中和图像一起显示出来，这个图像可能是你的发行版的 logo 也可能是你选择的一幅 ascii 艺术字。
+
+Neofetch 和 Scree..." />
+    <meta name="keywords" content="linux,mac" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://leeyefei.github.io">
+        <img src="https://leeyefei.github.io/images/avatar.png?v=1661091407159" class="site-logo">
+        <h1 class="site-title">日照骑行者</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://leeyefei.github.io" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+          <a class="social-link" href="https://twitter.com/leeyefei" target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      一个爱好骑行的科技粉
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://leeyefei.github.io" target="_blank">leeyefei</a> | <a class="rss" href="https://leeyefei.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Neofetch ：带发行版 Logo 图像的系统信息显示工具</h2>
+            <div class="post-date">2022-08-14</div>
+            
+              <div class="feature-container" style="background-image: url('https://leeyefei.github.io/post-images/neofetch-dai-fa-xing-ban-logo-tu-xiang-de-xi-tong-xin-xi-xian-shi-gong-ju.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>Neofetch 是一个跨平台的易于使用的 系统信息显示命令行脚本[1]，它收集你的系统信息，并在终端中和图像一起显示出来，这个图像可能是你的发行版的 logo 也可能是你选择的一幅 ascii 艺术字。</p>
+<!-- more -->
+<p>Neofetch 和 ScreenFetch[2] 或者 Linux_Logo[3] 很像，但是它可以高度定制，并且还有一些额外的我们要在下面讨论的特点。</p>
+<p>它的主要特点有：运行速度快，可以显示全色图像 —— 用 ASCII 字符显示的发行版 logo ，旁边显示系统信息，可以高度定制，可以随时随地显示系统信息，并且在脚本结束的时候还可以通过一个特殊的参数来启用桌面截图。</p>
+<p>系统要求：</p>
+<p>Bash 3.0+ 带 ncurses 支持。<br>
+w3m-img (有时候会打包成 w3m) 或者 iTerm2 或者 Terminology，用于显示图像。<br>
+imagemagick[4]，用于创建缩略图。<br>
+支持 [\033[14t 的 Linux 终端模拟器[5] 或者 xdotool 或者 xwininfo + xprop 或者 xwininfo + xdpyinfo 。<br>
+Linux 系统中还需要 feh、nitrogen 或者 gsettings 来提供对墙纸的支持。<br>
+注意：你可以从 Neofetch 的 Github 页面了解更多关于可选依赖的信息，以检查你的 Linux 终端模拟器[6] 是不是真的支持 \033[14t 或者是否需要一些额外的依赖来使这个脚本在你的发行版上工作得更好。</p>
+<p>怎样在 Linux 系统上安装 Neofetch</p>
+<p>Neofetch 可以从几乎所有 Linux 发行版的第三方仓库轻松安装，请按照以下各自的安装说明进行安装。</p>
+<p>Debian</p>
+<p>$ echo &quot;deb http://dl.bintray.com/dawidd6/neofetch jessie main&quot; | sudo tee -a /etc/apt/sources.list<br>
+$ curl -L &quot;https://bintray.com/user/downloadSubjectPublicKey?username=bintray&quot; -o Release-neofetch.key &amp;&amp; sudo apt-key add Release-neofetch.key &amp;&amp; rm Release-neofetch.key<br>
+$ sudo apt-get update<br>
+$ sudo apt-get install neofetch<br>
+Ubuntu 和 Linux Mint</p>
+<p>$ sudo add-apt-repository ppa:dawidd0811/neofetch<br>
+$ sudo apt-get update<br>
+$ sudo apt-get install neofetch<br>
+RHEL, CentOS 和 Fedora</p>
+<p>你的系统里面要安装了 dnf-plugins-core ，或者用以下命令安装它：</p>
+<p>$ sudo yum install dnf-plugins-core<br>
+启用 COPR 仓库然后安装 neofetch。</p>
+<p>$ sudo dnf copr enable konimex/neofetch<br>
+$ sudo dnf install neofetch<br>
+Arch Linux</p>
+<p>你可以用 packer 或 Yaourt 从 AUR 安装 neofetch 或 neofetch-git。</p>
+<p>$ packer -S neofetch<br>
+$ packer -S neofetch-git<br>
+或<br>
+$ yaourt -S neofetch<br>
+$ yaourt -S neofetch-git<br>
+Gentoo</p>
+<p>从 Gentoo/Funtoo 的官方源安装 app-misc/neofetch。如果你要安装这个程序的 git 版的话，你可以安装  app-misc/neofetch-9999。</p>
+<p>怎么在 Linux 中使用 Neofetch</p>
+<p>一旦你安装了 Neofetch ，使用它的一般语法是：</p>
+<p>$ neofetch<br>
+注意： 要是你没有安装 w3m-img 或者 imagemagick[7] 的话，screenfetch[8] 会默认被启用，neofetch 会如下图所示显示你的 [ASCII 艺术 logo]。</p>
+<p>Linux Mint 系统信息<br>
+<img src="https://leeyefei.github.io/post-images/1660481650007.png" alt="" loading="lazy"><br>
+Linux Mint 系统信息<br>
+Linux Mint 系统信息<br>
+Ubuntu 系统信息<br>
+<img src="https://leeyefei.github.io/post-images/1660481665835.png" alt="" loading="lazy"><br>
+Ubuntu 系统信息<br>
+Ubuntu 系统信息<br>
+如果你想用图片显示你的发行版 logo，需要用下面的命令安装 w3m-img 或者 imagemagick 。</p>
+<p>$ sudo apt-get install w3m-img    [On Debian/Ubuntu/Mint]<br>
+$ sudo yum install w3m-img        [On RHEL/CentOS/Fedora]<br>
+然后再次运行 neofetch，你就会看到如下图所示的用你系统的默认墙纸来显示图片。<br>
+<img src="https://leeyefei.github.io/post-images/1660481693280.png" alt="" loading="lazy"><br>
+$ neofetch<br>
+Ubuntu 系统信息带 logo<br>
+Ubuntu 系统信息带 logo<br>
+第一次运行 neofetch 后，它会在这里创建一个配置文件： $HOME/.config/neofetch/config。</p>
+<p>这个配置文件可以让你通过 printinfo ()  函数来调整你想显示在终端的系统信息。你可以增加，修改，删除，也可以使用 bash 代码去调整你要显示的信息。</p>
+<p>你可以如下图所示用你喜欢的编辑器打开这个配置文件：</p>
+<p>$ vi ~/.config/neofetch/config<br>
+以下是我系统配置的片段 ，显示了 printinfo () 函数。</p>
+<p>Neofetch 配置</p>
+<p>#!/usr/bin/env bash</p>
+<h1 id="vimfdmmarker">vim:fdm=marker</h1>
+<h1 id=""></h1>
+<h1 id="neofetch-config-file">Neofetch config file</h1>
+<h1 id="httpsgithubcomdylanarapsneofetch">https://github.com/dylanaraps/neofetch</h1>
+<h1 id="speed-up-script-by-not-using-unicode">Speed up script by not using unicode</h1>
+<p>export LC_ALL=C<br>
+export LANG=C</p>
+<h1 id="info-options">Info Options {{{</h1>
+<h1 id="info">Info</h1>
+<h1 id="see-this-wiki-page-for-more-info">See this wiki page for more info:</h1>
+<h1 id="httpsgithubcomdylanarapsneofetchwikicustomizing-info">https://github.com/dylanaraps/neofetch/wiki/Customizing-Info</h1>
+<p>printinfo() {<br>
+info title<br>
+info underline</p>
+<pre><code>info &quot;Model&quot; model
+info &quot;OS&quot; distro
+info &quot;Kernel&quot; kernel
+info &quot;Uptime&quot; uptime
+info &quot;Packages&quot; packages
+info &quot;Shell&quot; shell
+info &quot;Resolution&quot; resolution
+info &quot;DE&quot; de
+info &quot;WM&quot; wm
+info &quot;WM Theme&quot; wmtheme
+info &quot;Theme&quot; theme
+info &quot;Icons&quot; icons
+info &quot;Terminal&quot; term
+info &quot;Terminal Font&quot; termfont
+info &quot;CPU&quot; cpu
+info &quot;GPU&quot; gpu
+info &quot;Memory&quot; memory
+
+# info &quot;CPU Usage&quot; cpu_usage
+# info &quot;Disk&quot; disk
+# info &quot;Battery&quot; battery
+# info &quot;Font&quot; font
+# info &quot;Song&quot; song
+# info &quot;Local IP&quot; localip
+# info &quot;Public IP&quot; publicip
+# info &quot;Users&quot; users
+# info &quot;Birthday&quot; birthday
+
+info linebreak
+info cols
+info linebreak
+</code></pre>
+<p>}<br>
+.....<br>
+下面的命令可以显示所有你能在 neofetch 脚本中用的参数和配置值：</p>
+<p>$ neofetch --help<br>
+要启用所有的功能和参数来运行程序，你可以用 --test 参数：</p>
+<p>$ neofetch --test<br>
+要再次显示 ASCII 艺术 logo ，你可以用 --ascii 参数 :</p>
+<p>$ neofetch --ascii<br>
+这篇文章中，我们向你介绍了一个可以高度定制的、用来收集系统信息并将它显示在终端上的命令行脚本。</p>
+<p>如果你有什么问题，或者对这个脚本有什么想法，请在下面留言。</p>
+<p>最后但是同样重要的是，如果你知道有类似的脚本，请毫不犹豫地告诉我们，感谢反馈。</p>
+<p>在此访问 neofetch Github 仓库。</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://leeyefei.github.io/tag/D1T8jA57d/" class="tag">
+                    linux
+                  </a>
+                
+                  <a href="https://leeyefei.github.io/tag/X47LkC6en/" class="tag">
+                    mac
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://leeyefei.github.io/post/vivim-jian-pan-tu/">
+                  <h3 class="post-title">
+                    vi/vim键盘图
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+              
+                <div id="gitalk-container" data-aos="fade-in"></div>
+              
+
+              
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+  
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+
+      var gitalk = new Gitalk({
+        clientID: '',
+        clientSecret: '',
+        repo: 'leeyefei.github.io',
+        owner: 'leeyefei',
+        admin: ['leeyefei'],
+        id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+
+      gitalk.render('gitalk-container')
+
+    </script>
+  
+
+  
+
+
+
+
+  </body>
+</html>
